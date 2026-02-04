@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="js/scripts.js" defer></script>
     <link
       rel="shortcut icon"
       href="./assets/image/logo.png"
       type="image/png-icon"
     />
+    <script type="module" src="js/scripts.js" defer></script>
     <link rel="stylesheet" href="css/output.css" />
     <link
       rel="stylesheet"
@@ -92,7 +92,7 @@
                     id="assunto"
                     class="bg-white rounded-md p-1 border-2 border-(--rosado) outline-0 text-stone-500 font-semibold"
                   >
-                    <option value="">-Selecione-</option>
+                    <option value="" class="text-sm">-Selecione</option>
                   </select>
                 </div>
               </div>
@@ -114,14 +114,14 @@
                 <div class="col-span-2 grid grid-cols-2">
                   <button
                     type="reset"
-                    class="col-start-2 cursor-pointer border-2 text-(--rosado) border-(--rosado) bg-white p-1.5"
+                    class="col-start-2 hover:bg-stone-100 cursor-pointer border-2 text-(--rosado) border-(--rosado) bg-white p-1.5"
                   >
                     Limpar
                   </button>
                 </div>
 
                 <button
-                  class="col-span-1 border cursor-pointer p-1.5 bg-(--rosado) border-red-800"
+                  class="col-span-1 border cursor-pointer p-1.5 bg-(--rosado) border-red-800 hover:bg-(--rosadoHover)"
                   type="submit"
                 >
                   Enviar
