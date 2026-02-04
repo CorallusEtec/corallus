@@ -11,7 +11,9 @@
 :root {
   /*font-family: "Coco Gothic"; */
   font-family: "Nunito", sans-serif;
+  --maisRosa: #f16b68;
   --rosado: #da5050;
+  --bege: #efebe5;
 }
 
 .navbar {

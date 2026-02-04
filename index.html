@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="js/scripts.js" defer></script>
-    <link rel="shortcut icon" href="./assets/image/logo.png" type="image/png-icon">
+    <link
+      rel="shortcut icon"
+      href="./assets/image/logo.png"
+      type="image/png-icon"
+    />
     <link rel="stylesheet" href="css/output.css" />
     <link
       rel="stylesheet"
@@ -17,7 +21,7 @@
     <header class="bg-(--rosado) navbar font-bold">
       <div class="flex items-center">
         <a href="#" class="mr-12">
-          <img src="./assets/image/logo.png" alt="logo" class="max-h-20" />
+          <img src="./assets/image/logo-vet.png" alt="logo" class="max-h-20" />
         </a>
         <nav>
           <ul class="flex gap-8 text-white text-xl text-center p-3">
@@ -40,7 +44,95 @@
         </nav>
       </div>
     </header>
-<br>
+    <!-- FALE CONOSCO -->
+
+    <section id="fale-conosco">
+      <div class="flex justify-center">
+        <div class="bg-(--maisRosa) m-3 text-white rounded-sm p-5 w-6/12">
+          <div class="flex justify-center p-3">
+            <h1 class="text-6xl font-semibold">Fale Conosco</h1>
+          </div>
+          <div class="flex flex-col bg-(--bege) p-5 rounded-sm">
+            <form>
+              <!-- Nome -->
+              <div class="flex flex-col mb-5">
+                <label for="nome" class="text-(--rosado) font-semibold"
+                  >Nome Completo:
+                </label>
+                <input
+                  placeholder="Nome"
+                  id="nome"
+                  name="nome"
+                  type="text"
+                  class="max-w-6/12 bg-white rounded-md p-1 border-2 border-(--rosado) outline-0 text-stone-500 font-semibold"
+                />
+              </div>
+              <!-- Email e Assunto -->
+              <div class="grid grid-cols-3 items-center mb-5">
+                <!-- Email-->
+                <div class="flex flex-col col-span-2">
+                  <label for="email" class="text-(--rosado) font-semibold"
+                    >Email:
+                  </label>
+                  <input
+                    placeholder="Email"
+                    id="email"
+                    name="email"
+                    type="email"
+                    class="max-w-9/12 bg-white rounded-md p-1 border-2 border-(--rosado) outline-0 text-stone-500 font-semibold"
+                  />
+                </div>
+                <!-- Assunto -->
+                <div class="flex flex-col col-span-1 gap-1">
+                  <label for="assunto" class="text-(--rosado) font-semibold"
+                    >Assunto:</label
+                  >
+                  <select
+                    name="assunto"
+                    id="assunto"
+                    class="bg-white rounded-md p-1 border-2 border-(--rosado) outline-0 text-stone-500 font-semibold"
+                  >
+                    <option value="">-Selecione-</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Mensagem -->
+              <div class="flex flex-col mb-5">
+                <label for="msg" class="text-(--rosado) font-semibold"
+                  >Mensagem:</label
+                >
+                <textarea
+                  name="msg"
+                  id="msg"
+                  maxlength="700"
+                  placeholder="Mensagem"
+                  class=" bg-white rounded-md min-h-28 max-h-44 p-1 border-2 border-(--rosado) outline-0 text-stone-500 font-semibold"
+                ></textarea>
+              </div>
+              <!-- Botões -->
+              <div class="grid grid-cols-3 gap-2">
+                <div class="col-span-2 grid grid-cols-2">
+                  <button
+                    type="reset"
+                    class="col-start-2 cursor-pointer border-2 text-(--rosado) border-(--rosado) bg-white p-1.5"
+                  >
+                    Limpar
+                  </button>
+                </div>
+
+                <button
+                  class="col-span-1 border cursor-pointer p-1.5 bg-(--rosado) border-red-800"
+                  type="submit"
+                >
+                  Enviar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FOOTER -->
     <section id="footer">
       <div class="bg-(--rosado) w-full p-5 text-white">
@@ -51,7 +143,7 @@
 
         <div class="grid grid-cols-3">
           <div class="col-span-1">
-            <div class="flex flex-col text-3xl">
+            <div class="flex flex-col text-3xl gap-1">
               <a href=""><i class="bi bi-twitter-x"></i></a>
               <a href=""><i class="bi bi-whatsapp"></i></a>
               <a href=""><i class="bi bi-envelope-fill"></i></a>
@@ -59,11 +151,15 @@
             </div>
           </div>
           <div class="col-span-1 flex justify-center">
-            <img src="./assets/image/logo.png" alt="Logo" class="max-h-28" />
+            <img
+              src="./assets/image/logo-vet.png"
+              alt="Logo"
+              class="max-h-28"
+            />
           </div>
 
           <div class="col-span-1">
-            <div class="flex flex-col items-end text-3xl">
+            <div class="flex flex-col items-end text-3xl gap-1">
               <a href=""><i class="bi bi-youtube"></i></a>
               <a href=""><i class="bi bi-facebook"></i></a>
               <a href=""><i class="bi bi-instagram"></i></a>
@@ -72,8 +168,10 @@
         </div>
 
         <div class="flex justify-between border-t-2 border-white mt-5">
-          <a href="" class="text-xs">Políticas de privacidade</a>
-          <a href="" class="text-xs" id="copy">Todos os direitos reservados - Corallus </a>
+          <a href="" class="text-xs font-semibold">Políticas de privacidade</a>
+          <a href="" class="text-xs font-semibold" id="copy"
+            >Todos os direitos reservados - Corallus
+          </a>
         </div>
       </div>
     </section>
