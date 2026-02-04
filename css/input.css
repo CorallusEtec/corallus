@@ -1,1 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import "tailwindcss";
+
+/*
+@font-face {
+  font-family: "Coco Gothic";
+  src: url("../assets/font/coco_gothic/CocoGothic_trial.ttf");
+  font-weight: 500;
+}
+  */
+:root {
+  /*font-family: "Coco Gothic"; */
+  font-family: "Nunito", sans-serif;
+  --rosado: #da5050;
+}
+
+.navbar {
+  overflow: hidden;
+  position: sticky; 
+  top: 0; 
+  width: 100%; 
+}
