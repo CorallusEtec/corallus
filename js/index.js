@@ -1,0 +1,11 @@
+import { assuntos } from './info.js';
+import { validarForm, renderAssuntos, enviarEmail } from './formControl.js';
+
+const copy = document.querySelector("#copy");
+const selectEl = document.querySelector("#assunto");
+const dataAtual = new Date();
+copy.innerText = copy.innerText+" "+dataAtual.getFullYear();
+
+
+
+renderAssuntos(selectEl, assuntos);

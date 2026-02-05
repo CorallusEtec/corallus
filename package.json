@@ -1,8 +1,25 @@
 {
+  "name": "corallus",
+  "version": "1.0.0",
+  "description": "Esse site refere-se à um dos artefatos para o Trabalho de Conclusão de Curso em Desenvolvimento de Sistemas na Escola Técnica Estadual de Guaianazes.",
+  "homepage": "https://github.com/SamuMeneDev/corallus#readme",
+  "bugs": {
+    "url": "https://github.com/SamuMeneDev/corallus/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamuMeneDev/corallus.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "js/scripts.js",
   "scripts": {
+    "start": "node --env-file .env js/scripts.js",
     "compila": "npx @tailwindcss/cli -i ./css/input.css -o ./css/output.css --watch"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@tailwindcss/cli": "^4.1.18",
     "tailwindcss": "^4.1.18"
   }

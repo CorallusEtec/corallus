@@ -8,7 +8,7 @@
       href="./assets/image/logo.png"
       type="image/png-icon"
     />
-    <script type="module" src="js/scripts.js" defer></script>
+    <script type="module" src="js/index.js" defer></script>
     <link rel="stylesheet" href="css/output.css" />
     <link
       rel="stylesheet"
@@ -62,9 +62,10 @@
                 <input
                   placeholder="Nome"
                   id="nome"
+                  required
                   name="nome"
                   type="text"
-                  class="max-w-6/12 bg-white rounded-md p-1 border-2 border-(--rosado) outline-0 text-stone-500 font-semibold"
+                  class="fd max-w-6/12 bg-white rounded-md p-1 border-2 border-(--rosado) outline-0 text-stone-500 font-semibold"
                 />
               </div>
               <!-- Email e Assunto -->
@@ -76,10 +77,11 @@
                   </label>
                   <input
                     placeholder="Email"
+                    required
                     id="email"
                     name="email"
                     type="email"
-                    class="max-w-9/12 bg-white rounded-md p-1 border-2 border-(--rosado) outline-0 text-stone-500 font-semibold"
+                    class="fd max-w-9/12 bg-white rounded-md p-1 border-2 border-(--rosado) outline-0 text-stone-500 font-semibold"
                   />
                 </div>
                 <!-- Assunto -->
@@ -90,9 +92,9 @@
                   <select
                     name="assunto"
                     id="assunto"
-                    class="bg-white rounded-md p-1 border-2 border-(--rosado) outline-0 text-stone-500 font-semibold"
+                    class="fd bg-white rounded-md p-1 border-2 border-(--rosado) outline-0 text-stone-500 font-semibold"
                   >
-                    <option value="" class="text-sm">-Selecione</option>
+                    <option value="" class="text-sm ">Selecione</option>
                   </select>
                 </div>
               </div>
@@ -103,10 +105,11 @@
                 >
                 <textarea
                   name="msg"
+                  required
                   id="msg"
                   maxlength="700"
                   placeholder="Mensagem"
-                  class=" bg-white rounded-md min-h-28 max-h-44 p-1 border-2 border-(--rosado) outline-0 text-stone-500 font-semibold"
+                  class="fd bg-white rounded-md min-h-28 max-h-44 p-1 border-2 border-(--rosado) outline-0 text-stone-500 font-semibold"
                 ></textarea>
               </div>
               <!-- Botões -->
@@ -123,6 +126,7 @@
                 <button
                   class="col-span-1 border cursor-pointer p-1.5 bg-(--rosado) border-red-800 hover:bg-(--rosadoHover)"
                   type="submit"
+                  id="submit"
                 >
                   Enviar
                 </button>
@@ -175,5 +179,10 @@
         </div>
       </div>
     </section>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
   </body>
 </html>
