@@ -1,13 +1,12 @@
-import { API_KEY } from "./env.js";
-import emailjs from "@emailjs/browser";
+import { assuntos } from "./info.js";
 const btnEnviar = document.querySelector("#submit");
 
+// Botão de enviar do form
 btnEnviar.addEventListener("click", (e) => {
   e.preventDefault();
   const fields = document.querySelectorAll(".fd");
   validarForm(fields);
 });
-
 function validarForm(campos) {
   let valido = true;
   for (let i = 0; i < campos.length; i++) {
@@ -17,28 +16,20 @@ function validarForm(campos) {
     }
   }
   if (valido) {
-    enviarEmail(API_KEY);
+
+    enviarEmail(campos);
   } else {
     console.log("Campos Não Preenchidos");
   }
 }
 
-function renderAssuntos(el, lista) {
-  for (let i = 0; i < lista.length; i++) {
-    const opt = document.createElement("option");
-    opt.innerText = lista[i];
-    opt.classList.add("text-sm");
-    opt.value = i;
-    el.appendChild(opt);
+function enviarEmail(campos) {
+  const doc = {
+    nome: campos[0].value,
+    email: campos[1].value,
+    assunto: assuntos[Number(campos[2].value)],
+    message: campos[3].value
   }
 }
 
-function enviarEmail(KEY) {
-  (function(){
-      emailjs.init({
-        publicKey: KEY,
-      });
-   })();
-}
-
-export { validarForm, renderAssuntos, enviarEmail };
+export { validarForm };

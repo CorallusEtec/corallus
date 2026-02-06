@@ -1,5 +1,5 @@
 import { assuntos } from './info.js';
-import { validarForm, renderAssuntos, enviarEmail } from './formControl.js';
+import { renderAssuntos } from './visual.js';
 
 const copy = document.querySelector("#copy");
 const selectEl = document.querySelector("#assunto");
