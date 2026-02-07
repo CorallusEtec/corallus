@@ -44,52 +44,34 @@
     <!-- HOME -->
 <main>
   <section
-    style="
-      height: calc(100vh - 90px);
-      background-image: url('./assets/image/fundoHomeCorallus.png');
-      background-size: cover;
-      background-position: center right;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;">
+    class="h-[calc(100vh-90px)] bg-[url('../assets/image/fundoHomeCorallus.png')] bg-cover bg-right flex items-center justify-center text-white text-center"
+  >
     <div>
-      <h1 style="font-size: 4rem; font-family: serif;">
+      <h1 class="text-6xl font-serif ">
         Corallus
       </h1>
 
-      <p style="font-size: 1.5rem; margin-top: 0.5rem;">
+      <p class="text-2xl mt-2">
         Juntos Inovando
       </p>
 
       <div
-        style="
-          margin-top: 2rem;
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-          border: 2px solid white;
-          border-radius: 999px;
-          padding: 0.75rem 1.5rem;
-          width: 400px;">
+        class="mt-8 flex items-center gap-4 border-2 border-white rounded-full py-3 px-6 w-[400px]"
+      >
         <i class="bi bi-search"></i>
 
         <input
           type="text"
           placeholder="Pesquisar"
-          style="
-            flex: 1;
-            background: transparent;
-            border: none;
-            outline: none;
-            color: white;"/>
+          class="flex-1 bg-transparent border-none outline-none text-white placeholder-white"
+        />
 
         <i class="bi bi-mic-fill"></i>
       </div>
     </div>
   </section>
 </main>
+
 
 
     <!-- FOOTER -->
