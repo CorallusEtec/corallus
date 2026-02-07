@@ -4,7 +4,7 @@ const integrantes = [
     nome: "André dos Santos",
     foto: "./assets/image/membros/andre.jpeg",
     funcao: "Gerente de projetos e Back-End",
-    contato: [
+    contatos: [
       {
         rede: "Email",
         url: "mailto:andre@270708gmil.com",
@@ -84,7 +84,7 @@ const integrantes = [
   },
   {
     nome: "Lucas Pereira",
-    foto: "./assets/image/membros/lucasLuciano.jpeg",
+    foto: "./assets/image/membros/lucasPereira.jpeg",
     funcao: "DBA",
     contatos: [
       {
@@ -123,7 +123,7 @@ const integrantes = [
   },
   {
     nome: "Rafael Souto",
-    foto: "./assets/image/membros/murilo.jpeg",
+    foto: "./assets/image/membros/rafael.jpeg",
     funcao: "Desenvolvedor Front-End",
     contatos: [
       {
