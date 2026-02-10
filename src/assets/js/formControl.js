@@ -2,12 +2,9 @@ import { assuntos } from "./info.js";
 const btnEnviar = document.querySelector("#submit");
 
 // Botão de enviar do form
-btnEnviar.addEventListener("click", (e) => {
+function validarForm(e) {
+  const campos = document.querySelectorAll(".fd");
   e.preventDefault();
-  const fields = document.querySelectorAll(".fd");
-  validarForm(fields);
-});
-function validarForm(campos) {
   let valido = true;
   for (let i = 0; i < campos.length; i++) {
     if (campos[i].value.trim() === "") {
@@ -30,6 +27,7 @@ function enviarEmail(campos) {
     assunto: assuntos[Number(campos[2].value)],
     message: campos[3].value
   }
+  console.log(doc);
 }
 
 export { validarForm };

@@ -1,4 +1,9 @@
+import { validarForm } from "../../assets/js/formControl";
+import { assuntos } from "../../assets/js/info";
+
 export default function FaleConosco() {
+
+
   return (
     <section id="fale-conosco">
       <div className="flex justify-center">
@@ -49,6 +54,13 @@ export default function FaleConosco() {
                     <option value="" className="text-sm">
                       Selecione
                     </option>
+                    {
+                      assuntos.map(ass=> {
+                        return (
+                          <option key={ass.id} value={ass.id}>{ass.nome}</option>
+                        )
+                      })
+                    }
                   </select>
                 </div>
               </div>
@@ -80,6 +92,7 @@ export default function FaleConosco() {
                   className="col-span-1 border cursor-pointer p-1.5 bg-(--rosado) border-red-800 hover:bg-(--rosadoHover)"
                   type="submit"
                   id="submit"
+                  onClick={(e)=>validarForm(e)}
                 >
                   Enviar
                 </button>

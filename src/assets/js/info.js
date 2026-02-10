@@ -1,4 +1,8 @@
-const assuntos = ["Parceria", "Críticas e Sugestões", "Dúvidas"];
+const assuntos = [
+  {id: 1, nome: "Parceria"},
+  {id:2, nome: "Críticas e Sugestões"},
+  {id: 3, nome: "Dúvidas"},
+];
 const integrantes = [
   {
     id: 1,
