@@ -5,9 +5,8 @@ const assuntos = [
 ];
 const integrantes = [
   {
-    id: 1,
     nome: "André dos Santos",
-    foto: "src/assets/image/membros/andre.jpeg",
+    foto: "./assets/image/membros/andre.jpeg",
     funcao: "Gerente de projetos e Back-End",
     contatos: [
       {
@@ -29,9 +28,8 @@ const integrantes = [
     ],
   },
   {
-    id: 2,
     nome: "Samuel Isidro",
-    foto: "src/assets/image/membros/samuel.jpeg",
+    foto: "./assets/image/membros/samuel.jpeg",
     funcao: "Full-Stack",
     contatos: [
       {
@@ -53,9 +51,8 @@ const integrantes = [
     ],
   },
   {
-    id: 3,
     nome: "Gustavo Matos",
-    foto: "src/assets/image/membros/gustavo.jpeg",
+    foto: "./assets/image/membros/gustavo.jpeg",
     funcao: "Tester e Back-end",
     contatos: [
       {
@@ -66,9 +63,8 @@ const integrantes = [
     ],
   },
   {
-    id: 4,
     nome: "Isabelly Alves",
-    foto: "src/assets/image/membros/isabelly.jpeg",
+    foto: "./assets/image/membros/isabelly.jpeg",
     funcao: "Analista de Projeto e Designer",
     contatos: [
       {
@@ -79,9 +75,8 @@ const integrantes = [
     ],
   },
   {
-    id: 5,
     nome: "Lucas Luciano",
-    foto: "src/assets/image/membros/lucasLuciano.jpeg",
+    foto: "./assets/image/membros/lucasLuciano.jpeg",
     funcao: "DBA",
     contatos: [
       {
@@ -92,9 +87,8 @@ const integrantes = [
     ],
   },
   {
-    id: 6,
     nome: "Lucas Pereira",
-    foto: "src/assets/image/membros/lucasPereira.jpeg",
+    foto: "./assets/image/membros/lucasPereira.jpeg",
     funcao: "DBA",
     contatos: [
       {
@@ -115,9 +109,8 @@ const integrantes = [
     ],
   },
   {
-    id: 7,
     nome: "Murilo Octavio",
-    foto: "src/assets/image/membros/murilo.jpeg",
+    foto: "./assets/image/membros/murilo.jpeg",
     funcao: "Desenvolvedor Front-End",
     contatos: [
       {
@@ -133,9 +126,8 @@ const integrantes = [
     ],
   },
   {
-    id: 8,
     nome: "Rafael Souto",
-    foto: "src/assets/image/membros/rafael.jpeg",
+    foto: "./assets/image/membros/rafael.jpeg",
     funcao: "Desenvolvedor Front-End",
     contatos: [
       {
