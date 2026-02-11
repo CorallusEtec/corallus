@@ -25,10 +25,10 @@ const renderizarEquipe = () => {
         `).join("");
 
         return `
-            <div class="group h-100 w-64 [perspective:1000px]">
+            <div class="group h-100 w-64 perspective-[1000px]">
                 <div class="relative h-full w-full rounded-xl shadow-xl transition-all duration-700 transform-3d group-hover:[transform:rotateY(180deg)]">
                     
-                    <div class="absolute inset-0 h-full w-full backface-hidden z-20">
+                    <div class="absolute inset-0 h-full w-full [backface-visibility:hidden] hover:z-0">
                         <img class="h-full w-full rounded-xl object-cover shadow-lg" src="${membro.foto}" alt="${membro.nome}" />
                     </div>
 
@@ -36,7 +36,7 @@ const renderizarEquipe = () => {
                         <h5 class="text-xl font-bold mb-1">${membro.nome}</h5>
                         <p class="text-[11px] text-gray-500 italic mb-6 leading-tight">${membro.funcao}</p>
                         
-                        <div class="flex flex-wrap justify-center gap-4">
+                        <div class="flex flex-wrap justify-center gap-4 hover:z-20">
                             ${redesSociais}
                         </div>
                     </div>

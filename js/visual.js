@@ -1,4 +1,3 @@
-import { integrantes } from "./info.js"; 
 
 function renderAssuntos(el, lista) {
   for (let i = 0; i < lista.length; i++) {
