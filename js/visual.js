@@ -1,8 +1,7 @@
-
 function renderAssuntos(el, lista) {
   for (let i = 0; i < lista.length; i++) {
     const opt = document.createElement("option");
-    opt.innerText = lista[i];
+    opt.innerText = lista[i].nome;
     opt.classList.add("text-sm");
     opt.value = i;
     el.appendChild(opt);
@@ -10,22 +9,25 @@ function renderAssuntos(el, lista) {
 }
 
 const renderizarEquipe = (integrantes) => {
-    const container = document.querySelector("#cards-container");
-    if (!container) return;
+  const container = document.querySelector("#cards-container");
+  if (!container) return;
 
- 
-    const htmlGerado = integrantes.map(membro => {
-        
-        const links = membro.contatos || membro.contato || [];
+  const htmlGerado = integrantes
+    .map((membro) => {
+      const links = membro.contatos || membro.contato || [];
 
-        const redesSociais = links.map(link => `
+      const redesSociais = links
+        .map(
+          (link) => `
             <a href="${link.url}" target="_blank" class="hover:scale-110 transition-transform flex flex-col items-center gap-1 group/item">
                 <i class="${link.iconClass} text-2xl text-gray-400 group-hover/item:text-blue-500"></i>
                 <span class="text-[9px] font-medium text-gray-400 group-hover/item:text-blue-500">${link.rede}</span>
             </a>
-        `).join("");
+        `,
+        )
+        .join("");
 
-        return `
+      return `
             <div class="group h-100 w-64 perspective-[1000px]">
                 <div class="relative h-full w-full rounded-xl shadow-xl transition-all duration-700 transform-3d group-hover:[transform:rotateY(180deg)]">
                     
@@ -45,9 +47,10 @@ const renderizarEquipe = (integrantes) => {
                 </div>
             </div>
         `;
-    }).join("");
+    })
+    .join("");
 
-    container.innerHTML = htmlGerado;
+  container.innerHTML = htmlGerado;
 };
 
-export { renderAssuntos, renderizarEquipe }
+export { renderAssuntos, renderizarEquipe };

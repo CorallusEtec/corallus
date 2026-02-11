@@ -141,5 +141,52 @@
         }
       ]
     }
-  ]
+  ],
+  "projetos": [
+  {
+    "id": 1,
+    "nome": "Help Desk",
+    "plataforma": [
+      {"id": 1, "nome": "Web", "classe": "bi bi-globe"}
+    ],
+    "img": "./assets/image/projetos/helpdesk.png",
+    "desc": "desenvolvido com o objetivo de aprimorar habilidades em Programação Web (PW)"
+  },
+  {
+    "id": 2,
+    "nome": "My Stock",
+    "plataforma": [
+      {"id": 1, "nome": "Web", "classe": "bi bi-globe"}
+    ],
+    "img": "./assets/image/projetos/stock.jpeg",
+    "desc": "Este é um sistema de controle de estoque doméstico criado para facilitar a organização de itens usados no dia a dia.."
+  },
+  {
+    "id": 3,
+    "nome": "Projeto álbum 13",
+    "plataforma": [
+      {"id": 1, "nome": "Web", "classe": "bi bi-globe"}
+    ],
+    "img": "./assets/image/projetos/music.jpeg",
+    "desc": "Este projeto dedicado ao álbum 13 Lentes do Final Feliz, trazendo a tracklist, curiosidades e link direto para ouvir no Spotify"
+  },
+  {
+    "id": 4,
+    "nome": "Zoo Kids",
+    "plataforma": [
+      {"id": 1, "nome": "Mobile", "classe": "bi bi-phone"}
+    ],
+    "img": "./assets/image/projetos/zooKid.jpeg",
+    "desc": "Aplicativo educativo inspirado no Zoológico de São Paulo, criado para crianças explorarem animais, curiosidades e informações de forma divertida."
+  },
+  {
+    "id": 5,
+    "nome": "Jogo da Forca",
+    "plataforma": [
+      {"id": 1, "nome": "Desktop", "classe": "bi bi-pc-display"}
+    ],
+    "img": "./assets/image/projetos/jogoJava.jpeg",
+    "desc": "Jogo da forca inspirado em My Little Pony, com visual divertido, personagens fofos e mecânica simples de adivinhação de palavras."
+  }
+]
 }
