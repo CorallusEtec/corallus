@@ -1,9 +1,9 @@
 <?php
-    require('validar.php');
     require_once('variables.php');
     require_once('./src/PHPMailer.php');
     require_once('./src/SMTP.php');
     require_once('./src/Exception.php');
+    require('validar.php');
     
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
@@ -18,7 +18,7 @@ validarCampos($_POST);
 $assuntosJson = file_get_contents('./js/info.json');
 $assuntos = json_decode($assuntosJson)->assuntos;
 
-$mail = new PHPMailer(true);
+$mail = new PHPMailer(false);
 
 try {
     // Configurações do servidor
@@ -31,19 +31,28 @@ try {
     $mail->Port       = 587;
 
     // Remetente
-    $mail->setFrom($_POST["email"], $_POST["nome"]);
+    $mail->setFrom($_POST['email'], mb_convert_encoding($_POST["nome"], 'UTF-8'));
 
     // Destinatário
     $mail->addAddress('corallus.contato@gmail.com', 'Corallus');
 
     // Conteúdo
     $mail->isHTML(true);
-    $mail->Subject = $assuntos[$_POST['assunto']];
-    $mail->Body    = 'Ola mundo';
-    $mail->AltBody = 'Email enviado com sucesso!';
+    $mail->Subject = mb_convert_encoding($assuntos[$_POST['assunto']]->nome, 'UTF-8');
+    $mail->Body    = "<div style='border: 1px solid black; padding: 3px;'>".
+    "<h1>Fale Conosco</h1>".
+    "<p><strong>Remetente:</strong>".mb_convert_encoding($_POST['email'], 'UTF-8')."</p>".
+    "<p><strong>Assunto:</strong>".mb_convert_encoding($assuntos[$_POST['assunto']]->nome, 'UTF-8')."</p>".
+    "<p>Mensagem:".mb_convert_encoding($_POST['msg'], 'UTF-8')."</p>".
+    "</div>";
+    $mail->AltBody = mb_convert_encoding($_POST['msg'], 'UTF-8');
 
-    $mail->send();
-    echo 'Email enviado com sucesso!';
+    if($mail->send()) {
+        header("Location: index.html#fale-conosco");
+        } else {
+            header("Location: index.html#fale-conosco");
+    }
+
     } catch (Exception $e) {
-    echo 'Erro ao enviar: {$mail->ErrorInfo}';
+        echo "Erro ao enviar: {$e->getMessage()}";
     }
