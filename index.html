@@ -52,7 +52,7 @@
       <section
         class="h-[calc(100vh-90px)] bg-[url('../assets/image/fundoHomeCorallus.png')] bg-cover bg-right flex items-center justify-center text-white text-center"
         id="home"
-        >
+      >
         <div>
           <h1 class="text-6xl font-serif">Corallus</h1>
 
@@ -77,26 +77,37 @@
       <!-- QUEM SOMOS -->
       <section id="quem-somos" class="py-20 bg-white">
         <div class="flex justify-around">
-          <div class="flex flex-col">
+          <div class="flex flex-col items-center justify-between">
             <h2
-              class="text-4xl font-bold text-center text-gray-800 mb-2 uppercase tracking-widest"
+              class="text-4xl font-bold text-center text-gray-800 uppercase tracking-widest"
             >
               Quem Somos
             </h2>
-            <p class="text-center text-lg max-w-sm">A Corallus é especializada no desenvolvimento de sistemas e aplicativos para empresas desde startups e fintechs, implementando as mais modernas tecnologias disponiveis no mercado da informação, afim de inovar sempre.
-            Estamos sempre disponíveis para desenvolver o melhor sistema para você.
-            </p>
-            <a class="border-2 bg-(--rosado) text-white p-3" href="#fale-conosco">FALE CONOSCO</a>
+            <div class="flex flex-col items-center">
+              <p class="text-center font-semibold text-xl max-w-xl mb-3">
+                A Corallus é especializada no desenvolvimento de sistemas e
+                aplicativos para empresas desde startups e fintechs,
+                implementando as mais modernas tecnologias disponiveis no
+                mercado da informação, afim de inovar sempre. Estamos sempre
+                disponíveis para desenvolver o melhor sistema para você.
+              </p>
+              <a
+                class="w-7/12 text-center border border-black bg-(--rosado) font-bold text-white p-3"
+                href="#fale-conosco"
+                >FALE CONOSCO</a
+              >
+            </div>
           </div>
-          <div class="flex justify-center">
-            <img class="max-w-md" src="./assets/image/projetos/stock.jpeg" alt="">
+          <div class="flex justify-center border-stone-400 border p-3">
+            <img
+              class="max-w-xl"
+              src="./assets/image/template/computer.jpg"
+              alt="desenvolvimento"
+            />
           </div>
         </div>
 
-
         <div class="container mx-auto px-4">
-          
-
           <div
             id="cards-container"
             class="flex flex-wrap justify-center gap-10 mt-10"
@@ -104,18 +115,34 @@
         </div>
       </section>
       <!-- PARCEIROS -->
-       <section id="parceiros">
-        <h2 class="text-4xl font-bold text-center text-gray-800 mb-19 uppercase tracking-widest">Parceiros</h2>
-          <div class="flex flex-col gap-5">
-            <div class="flex justify-center">
-                <img class="border-2  max-w-sm" src="./assets/image/parceiros/prisma.jpg" alt="Prisma">
-            </div>
-            <div class="flex justify-around">
-              <img class="border-2  max-w-sm" src="./assets/image/parceiros/orbyte.jpg" alt="Orbyte">
-              <img class="border-2  max-w-sm" src="./assets/image/parceiros/nexus.jpg" alt="Nexus">
-            </div>
+      <section id="parceiros">
+        <h2
+          class="text-4xl font-bold text-center text-gray-800 mb-19 uppercase tracking-widest"
+        >
+          Parceiros
+        </h2>
+        <div class="flex flex-col gap-5">
+          <div class="flex justify-center">
+            <img
+              class="border-2 max-w-sm"
+              src="./assets/image/parceiros/prisma.jpg"
+              alt="Prisma"
+            />
           </div>
-       </section>
+          <div class="flex justify-around">
+            <img
+              class="border-2 max-w-sm"
+              src="./assets/image/parceiros/orbyte.jpg"
+              alt="Orbyte"
+            />
+            <img
+              class="border-2 max-w-sm"
+              src="./assets/image/parceiros/nexus.jpg"
+              alt="Nexus"
+            />
+          </div>
+        </div>
+      </section>
       <!-- FALE CONOSCO -->
 
       <section id="fale-conosco">
