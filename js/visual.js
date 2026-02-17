@@ -52,5 +52,25 @@ const renderizarEquipe = (integrantes) => {
 
   container.innerHTML = htmlGerado;
 };
-
-export { renderAssuntos, renderizarEquipe };
+function loadImage(imgCarrosel, lista, inicio) {
+  imgCarrosel.src = lista[inicio].img;
+}
+function initCarrosel(descProj, lista, atual, progCarrosel) {
+  imgCarrosel.src = lista[atual].img;
+  progCarrosel.max = lista.length-1;
+  attProgresso(progCarrosel, atual);
+}
+function renderDescProj(descProj, lista, atual) {
+  
+  descProj.innerHTML = `
+  <div class="flex justify-center gap-3 items-center p-2">
+      <h3 class="text-center text-3xl font-bold" id="tituloProj">${lista[atual].nome}</h3>
+    <div id="escopoProj"></div>
+  </div>
+  <p class="text-center text-xl" id="descProj">${lista[atual].desc}</p>
+  `;
+}
+function attProgresso(progCarrosel, atual) {
+  progCarrosel.value = atual;
+}
+export { renderAssuntos, renderizarEquipe, loadImage, renderDescProj, initCarrosel, attProgresso };

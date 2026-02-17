@@ -1,10 +1,14 @@
-import { renderAssuntos, renderizarEquipe } from './visual.js';
+import { attProgresso, initCarrosel, loadImage, renderAssuntos, renderDescProj, renderizarEquipe } from './visual.js';
 const copy = document.querySelector("#copy");
 const selectEl = document.querySelector("#assunto");
 const dataAtual = new Date();
+const imgCarrosel = document.querySelector("#imgCarrosel");
 copy.innerText = copy.innerText+" "+dataAtual.getFullYear();
-
-
+const btnProx = document.querySelector('#btnProx');
+const btnPrev = document.querySelector('#btnPrev');
+const descProj = document.querySelector('#descProj');
+const progCarrosel = document.querySelector('#progCarrosel');
+let contadorCarrosel = 0;
 
 async function converterJson(arquivo) {
     const data = await fetch(arquivo);
@@ -20,6 +24,23 @@ const jsonConvertido = await converterJson('./js/info.json');
 
 
 /* Funções de renderização de componentes no HTML */
+btnProx.addEventListener('click', () => {
+    contadorCarrosel++;
+    if(contadorCarrosel > jsonConvertido.projetos.length-1) { contadorCarrosel=0;}
+    loadImage(imgCarrosel, jsonConvertido.projetos, contadorCarrosel);
+    renderDescProj(descProj, jsonConvertido.projetos, contadorCarrosel);
+    attProgresso(progCarrosel, contadorCarrosel);
+});
+btnPrev.addEventListener('click', ()=>{
+    contadorCarrosel--;
+    if(contadorCarrosel < 0) { contadorCarrosel=jsonConvertido.projetos.length-1;}
+    loadImage(imgCarrosel, jsonConvertido.projetos, contadorCarrosel);
+    renderDescProj(descProj, jsonConvertido.projetos, contadorCarrosel);
+    attProgresso(progCarrosel, contadorCarrosel);
+});
+renderDescProj(descProj, jsonConvertido.projetos, contadorCarrosel);
+initCarrosel(descProj, jsonConvertido.projetos, contadorCarrosel, progCarrosel);
 renderAssuntos(selectEl, jsonConvertido.assuntos);
 renderizarEquipe(jsonConvertido.integrantes);
+
 
