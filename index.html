@@ -92,29 +92,39 @@
       <!-- NOSSOS PROJETOS -->
       <section id="nossos-projetos" class="bg-(--laranjaClaro) p-3">
         <h2
-            class="text-4xl font-bold text-center text-gray-800 mb-19 uppercase tracking-widest"
-          >
-            Nossos Projetos
-          </h2>
-        <div class="flex flex-col justify-between items-center ">
-          <div class="flex justify-center gap-3 max-w-md ">
+          class="text-4xl font-bold text-center text-gray-800 mb-19 uppercase tracking-widest"
+        >
+          Nossos Projetos
+        </h2>
+        <div class="flex flex-col justify-between items-center">
+          <div class="flex justify-center gap-3 max-w-150">
             <button id="btnPrev">
               <i
-                class="cursor-pointer text-(--rosado) text-3xl bi bi-arrow-left-circle-fill"
+                class="hover:text-(--rosadoHover) cursor-pointer text-(--rosado) text-4xl bi bi-arrow-left-circle-fill"
               ></i>
             </button>
-            <img id="imgCarrosel" class="h-80" alt="">
+            <div class="overflow-hidden rounded-lg mb-3">
+              <div id="carroselBox" class="relative top-0 flex duration-500 transition ease-in-out">
+                
+              </div>
+            </div>
             <button id="btnProx">
               <i
-                class="cursor-pointer text-(--rosado) text-3xl bi bi-arrow-right-circle-fill"
+                class="hover:text-(--rosadoHover) cursor-pointer text-(--rosado) text-4xl bi bi-arrow-right-circle-fill"
               ></i>
             </button>
           </div>
-          
-          <div id="descProj" class="flex flex-col bg-white border rounded-sm w-6/12">
-            
-          </div>
-          <progress id="progCarrosel" class="w-6/12 border border-stone-300 m-5" max="100" value="10"></progress>
+
+          <div
+            id="descProj"
+            class="flex flex-col transition-transform bg-white border text-(--rosado) rounded-sm w-6/12"
+          ></div>
+          <progress
+            id="progCarrosel"
+            class="w-6/12 border border-stone-300 m-5 ease-in-out"
+            max="100"
+            value="10"
+          ></progress>
         </div>
       </section>
 

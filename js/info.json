@@ -169,15 +169,6 @@
     ],
     "img": "./assets/image/projetos/music.jpeg",
     "desc": "Este projeto dedicado ao álbum 13 Lentes do Final Feliz, trazendo a tracklist, curiosidades e link direto para ouvir no Spotify"
-  },
-  {
-    "id": 4,
-    "nome": "Jogo da Forca",
-    "plataforma": [
-      {"id": 1, "nome": "Desktop", "classe": "bi bi-pc-display"}
-    ],
-    "img": "./assets/image/projetos/jogoJava.jpeg",
-    "desc": "Jogo da forca inspirado em My Little Pony, com visual divertido, personagens fofos e mecânica simples de adivinhação de palavras."
   }
 ]
 }

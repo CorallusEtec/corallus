@@ -53,42 +53,63 @@ const renderizarEquipe = (integrantes) => {
 };
 
 class Carrosel {
-  constructor(imgCarrosel, lista, descProj, progCarrosel) {
-    this.imgCarrosel = imgCarrosel;
+  constructor(carroselWrapper, lista, descProj, progCarrosel, indice) {
+    this.carroselWrapper = carroselWrapper;
     this.lista = lista;
     this.descProj = descProj;
     this.progCarrosel = progCarrosel;
+    this.indice = indice;
+    this.initCarrosel();
   }
-  clickBtnProx(indice) {
-    this.loadImage(indice);
-    this.renderDescProj(indice);
-    this.attProgresso(indice);
-  }
-  initCarrosel(inicio) {
-    this.loadImage(inicio);
+  
+  initCarrosel() {
+    this.loadImages();
+    this.renderDescProj();
+    this.attProgresso();
     this.progCarrosel.max = this.lista.length-1;
-    this.renderDescProj(inicio);
-    this.attProgresso(inicio);
   }
 
-  renderDescProj(indice) {
+  renderDescProj() {
   
     this.descProj.innerHTML = `
     <div class="flex justify-center gap-3 items-center p-2">
-      <h3 class="text-center text-3xl font-bold" id="tituloProj">${this.lista[indice].nome}</h3>
+      <h3 class="text-center text-3xl font-bold" id="tituloProj">${this.lista[this.indice].nome}</h3>
     <div id="escopoProj"></div>
     </div>
-    <p class="text-center text-xl" id="descProj">${this.lista[indice].desc}</p>
+    <p class="text-center text-xl" id="descProj">${this.lista[this.indice].desc}</p>
     `;
   }
-  attProgresso(indice) {
-    this.progCarrosel.value = indice;
+  attProgresso() {
+    this.progCarrosel.value = this.indice;
   }
-  loadImage(indice) {
-    this.imgCarrosel.src = this.lista[indice].img;
+  clickBtnProx() {
+    this.indice++;
+    if(this.indice > this.lista.length-1) { this.indice=0;}
+    this.renderDescProj();
+    this.attProgresso();
+    this.moveCarrosel(true);
   }
   clickBtnPrev() {
-
+    this.indice--;
+    if(this.indice < 0) { this.indice=this.lista.length-1;}
+    this.renderDescProj();
+    this.attProgresso();
+    this.moveCarrosel(true);
+  }
+  moveCarrosel(right) {
+    if(right) {
+      this.carroselWrapper.style.transform = `translateX(-${this.indice*this.slideList[0].offsetWidth}px)`;
+    } else { this.carroselWrapper.style.transform = `translateX(${this.indice*this.slideList[0].offsetWidth}px)`;}
+  }
+  loadImages() {
+    for(let i=0; i<this.lista.length; i++) {
+      const img = document.createElement('img');
+      img.src = this.lista[i].img;
+      img.classList.add('slide');
+      img.alt = `Imagem do projeto ${this.lista[i].nome}`
+      this.carroselWrapper.appendChild(img);
+    }
+    this.slideList = document.querySelectorAll('.slide');
   }
 }
-export { renderAssuntos, renderizarEquipe, loadImage, renderDescProj, initCarrosel, attProgresso };
+export { renderAssuntos, renderizarEquipe, Carrosel };

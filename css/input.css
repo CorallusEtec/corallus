@@ -41,12 +41,8 @@
   top: 0; 
   width: 100%; 
 }
-@keyframes sumida {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-.animar {
-  animation-duration: 3s;
-  animation-name: sumida;
-  animation-timing-function: ease-in-out;
+.slide {
+  width: 650px;
+  height: 330px;
+
 }
