@@ -121,4 +121,5 @@ class Carrosel {
     this.slideList = document.querySelectorAll('.slide');
   }
 }
+
 export { renderAssuntos, renderizarEquipe, Carrosel };
