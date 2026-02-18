@@ -22,10 +22,10 @@ async function converterJson(arquivo) {
 /* jsonConvertido pega os dados do info.json e transforma em um objeto de fato,
  sendo possivel manipular no codigo*/
 const jsonConvertido = await converterJson('./js/info.json');
-const carrosel = new Carrosel(carroselBox, jsonConvertido.projetos, descProj, progCarrosel, 0);
 
 /* Funções de renderização de componentes no HTML */
 
+const carrosel = new Carrosel(carroselBox, jsonConvertido.projetos, descProj, progCarrosel, 0);
 btnProx.addEventListener('click', () =>carrosel.clickBtnProx());
 btnPrev.addEventListener('click', ()=>carrosel.clickBtnPrev());
 
