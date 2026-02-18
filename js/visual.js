@@ -7,7 +7,6 @@ function renderAssuntos(el, lista) {
     el.appendChild(opt);
   }
 }
-
 const renderizarEquipe = (integrantes) => {
   const container = document.querySelector("#cards-container");
   if (!container) return;
@@ -52,25 +51,44 @@ const renderizarEquipe = (integrantes) => {
 
   container.innerHTML = htmlGerado;
 };
-function loadImage(imgCarrosel, lista, inicio) {
-  imgCarrosel.src = lista[inicio].img;
-}
-function initCarrosel(descProj, lista, atual, progCarrosel) {
-  imgCarrosel.src = lista[atual].img;
-  progCarrosel.max = lista.length-1;
-  attProgresso(progCarrosel, atual);
-}
-function renderDescProj(descProj, lista, atual) {
+
+class Carrosel {
+  constructor(imgCarrosel, lista, descProj, progCarrosel) {
+    this.imgCarrosel = imgCarrosel;
+    this.lista = lista;
+    this.descProj = descProj;
+    this.progCarrosel = progCarrosel;
+  }
+  clickBtnProx(indice) {
+    this.loadImage(indice);
+    this.renderDescProj(indice);
+    this.attProgresso(indice);
+  }
+  initCarrosel(inicio) {
+    this.loadImage(inicio);
+    this.progCarrosel.max = this.lista.length-1;
+    this.renderDescProj(inicio);
+    this.attProgresso(inicio);
+  }
+
+  renderDescProj(indice) {
   
-  descProj.innerHTML = `
-  <div class="flex justify-center gap-3 items-center p-2">
-      <h3 class="text-center text-3xl font-bold" id="tituloProj">${lista[atual].nome}</h3>
+    this.descProj.innerHTML = `
+    <div class="flex justify-center gap-3 items-center p-2">
+      <h3 class="text-center text-3xl font-bold" id="tituloProj">${this.lista[indice].nome}</h3>
     <div id="escopoProj"></div>
-  </div>
-  <p class="text-center text-xl" id="descProj">${lista[atual].desc}</p>
-  `;
-}
-function attProgresso(progCarrosel, atual) {
-  progCarrosel.value = atual;
+    </div>
+    <p class="text-center text-xl" id="descProj">${this.lista[indice].desc}</p>
+    `;
+  }
+  attProgresso(indice) {
+    this.progCarrosel.value = indice;
+  }
+  loadImage(indice) {
+    this.imgCarrosel.src = this.lista[indice].img;
+  }
+  clickBtnPrev() {
+
+  }
 }
 export { renderAssuntos, renderizarEquipe, loadImage, renderDescProj, initCarrosel, attProgresso };

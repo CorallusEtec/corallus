@@ -2,12 +2,14 @@ import { attProgresso, initCarrosel, loadImage, renderAssuntos, renderDescProj, 
 const copy = document.querySelector("#copy");
 const selectEl = document.querySelector("#assunto");
 const dataAtual = new Date();
-const imgCarrosel = document.querySelector("#imgCarrosel");
 copy.innerText = copy.innerText+" "+dataAtual.getFullYear();
+
+const imgCarrosel = document.querySelector("#imgCarrosel");
 const btnProx = document.querySelector('#btnProx');
 const btnPrev = document.querySelector('#btnPrev');
-const descProj = document.querySelector('#descProj');
 const progCarrosel = document.querySelector('#progCarrosel');
+const descProj = document.querySelector('#descProj');
+
 let contadorCarrosel = 0;
 
 async function converterJson(arquivo) {
