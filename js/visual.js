@@ -7,7 +7,6 @@ function renderAssuntos(el, lista) {
     el.appendChild(opt);
   }
 }
-
 const renderizarEquipe = (integrantes) => {
   const container = document.querySelector("#cards-container");
   if (!container) return;
@@ -53,4 +52,73 @@ const renderizarEquipe = (integrantes) => {
   container.innerHTML = htmlGerado;
 };
 
-export { renderAssuntos, renderizarEquipe };
+// Classe que controla as operações do carrosel de nossos projetos
+class Carrosel {
+  // Recebe as dependências e inicia o carrosel na view
+  constructor(carroselWrapper, lista, descProj, progCarrosel, indice) {
+    this.carroselWrapper = carroselWrapper;
+    this.lista = lista;
+    this.descProj = descProj;
+    this.progCarrosel = progCarrosel;
+    this.indice = indice;
+    this.initCarrosel();
+  }
+  
+  // Configurações iniciais do carrosel
+  initCarrosel() {
+    this.loadImages();
+    this.renderDescProj();
+    this.attProgresso();
+    this.progCarrosel.max = this.lista.length-1;
+  }
+
+  // Renderiza a aba com o nome e descrição do projeto
+  renderDescProj() {
+  
+    this.descProj.innerHTML = `
+    <div class="flex justify-center gap-3 items-center p-2">
+      <h3 class="text-center text-3xl font-bold" id="tituloProj">${this.lista[this.indice].nome}</h3>
+    <div id="escopoProj"></div>
+    </div>
+    <p class="text-center text-xl" id="descProj">${this.lista[this.indice].desc}</p>
+    `;
+  }
+  // Atualiza a Progress bar do carrosel
+  attProgresso() {
+    this.progCarrosel.value = this.indice;
+  }
+  // Realiza a operação de passar para a direita
+  clickBtnProx() {
+    this.indice++;
+    if(this.indice > this.lista.length-1) { this.indice=0;}
+    this.renderDescProj();
+    this.attProgresso();
+    this.moveCarrosel(true);
+  }
+  // Realiza a operação de passar para a esquerda
+  clickBtnPrev() {
+    this.indice--;
+    if(this.indice < 0) { this.indice=this.lista.length-1;}
+    this.renderDescProj();
+    this.attProgresso();
+    this.moveCarrosel(true);
+  }
+  // Movimenta de fato as imagens do carrosel
+  moveCarrosel(right) {
+    if(right) {
+      this.carroselWrapper.style.transform = `translateX(-${this.indice*this.slideList[0].offsetWidth}px)`;
+    } else { this.carroselWrapper.style.transform = `translateX(${this.indice*this.slideList[0].offsetWidth}px)`;}
+  }
+  // Função que carrega todas as imagens do json para a div do carrosel
+  loadImages() {
+    for(let i=0; i<this.lista.length; i++) {
+      const img = document.createElement('img');
+      img.src = this.lista[i].img;
+      img.classList.add('slide');
+      img.alt = `Imagem do projeto ${this.lista[i].nome}`
+      this.carroselWrapper.appendChild(img);
+    }
+    this.slideList = document.querySelectorAll('.slide');
+  }
+}
+export { renderAssuntos, renderizarEquipe, Carrosel };

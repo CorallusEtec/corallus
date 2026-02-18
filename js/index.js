@@ -1,9 +1,14 @@
-import { renderAssuntos, renderizarEquipe } from './visual.js';
+import { renderAssuntos, renderizarEquipe, Carrosel } from './visual.js';
 const copy = document.querySelector("#copy");
 const selectEl = document.querySelector("#assunto");
 const dataAtual = new Date();
 copy.innerText = copy.innerText+" "+dataAtual.getFullYear();
 
+const carroselBox = document.querySelector("#carroselBox");
+const btnProx = document.querySelector('#btnProx');
+const btnPrev = document.querySelector('#btnPrev');
+const progCarrosel = document.querySelector('#progCarrosel');
+const descProj = document.querySelector('#descProj');
 
 
 async function converterJson(arquivo) {
@@ -18,8 +23,14 @@ async function converterJson(arquivo) {
  sendo possivel manipular no codigo*/
 const jsonConvertido = await converterJson('./js/info.json');
 
-
 /* Funções de renderização de componentes no HTML */
+
+const carrosel = new Carrosel(carroselBox, jsonConvertido.projetos, descProj, progCarrosel, 0);
+btnProx.addEventListener('click', () =>carrosel.clickBtnProx());
+btnPrev.addEventListener('click', ()=>carrosel.clickBtnPrev());
+
+
 renderAssuntos(selectEl, jsonConvertido.assuntos);
 renderizarEquipe(jsonConvertido.integrantes);
+
 
