@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 @import "tailwindcss";
 
 /*
@@ -19,7 +19,42 @@
 
 .navbar {
   overflow: hidden;
-  position: sticky; 
-  top: 0; 
-  width: 100%; 
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+@keyframes escrever {
+  0% {
+    width: 0ch;
+  }
+  33% {
+    width: 33ch;
+  }
+  66% {
+    width: 33ch;
+  }
+  90% {
+    width: 0ch;
+  }
+  100% {
+    width: 0ch;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: gray;
+  }
+}
+
+.barra-pesquisa {
+  & p {
+    border-right: 5px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    animation:
+      escrever 10s infinite steps(38),
+      blink 0.5s infinite alternate step-end;
+  }
 }
