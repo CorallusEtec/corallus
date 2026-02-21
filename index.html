@@ -50,7 +50,7 @@
     <main>
       <!-- HOME -->
       <section
-        class="h-[calc(100vh-90px)] bg-[url('../assets/image/fundoHomeCorallus.png')] bg-cover bg-right flex items-center justify-center text-white text-center"
+        class="h-screen bg-[url('../assets/image/fundoHomeCorallus.png')] bg-cover bg-right flex items-center justify-center text-white text-center"
         id="home"
       >
         <div>
@@ -88,16 +88,16 @@
       </section>
 
       <!-- QUEM SOMOS -->
-      <section id="quem-somos" class="py-20 bg-white">
-        <div class="flex justify-around">
+      <section id="quem-somos" class="bg-white scroll-mt-20 mb-10">
+        <div class="flex justify-around py-30">
           <div class="flex flex-col items-center justify-between">
             <h2
-              class="text-4xl font-bold text-center text-gray-800 uppercase tracking-widest"
+              class="text-5xl font-bold text-center text-gray-800 uppercase tracking-widest"
             >
               Quem Somos
             </h2>
             <div class="flex flex-col items-center">
-              <p class="text-center font-semibold text-xl max-w-xl mb-3">
+              <p class="text-center font-semibold text-2xl max-w-xl mb-3 py-13">
                 A Corallus é especializada no desenvolvimento de sistemas e
                 aplicativos para empresas desde startups e fintechs,
                 implementando as mais modernas tecnologias disponiveis no
@@ -105,7 +105,7 @@
                 disponíveis para desenvolver o melhor sistema para você.
               </p>
               <a
-                class="w-7/12 text-center border border-black bg-(--rosado) font-bold text-white p-3"
+                class="w-7/12 text-center border border-black bg-(--rosado) font-bold text-white p-3 text-2xl"
                 href="#fale-conosco"
                 >FALE CONOSCO</a
               >
@@ -120,76 +120,18 @@
           </div>
         </div>
 
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-1">
           <div
             id="cards-container"
             class="flex flex-wrap justify-center gap-10 mt-10"
           ></div>
         </div>
       </section>
-      <!-- PARCEIROS -->
-      <section id="parceiros">
-        <h2
-          class="text-4xl font-bold text-center text-gray-800 mb-19 uppercase tracking-widest"
-        >
-          Parceiros
-        </h2>
-        <div class="flex flex-col gap-5">
-          <div class="flex justify-center">
-            <img
-              class="border-2 max-w-sm"
-              src="./assets/image/parceiros/prisma.jpg"
-              alt="Prisma"
-            />
-          </div>
-          <div class="flex justify-around">
-            <img
-              class="border-2 max-w-sm"
-              src="./assets/image/parceiros/orbyte.jpg"
-              alt="Orbyte"
-            />
-            <img
-              class="border-2 max-w-sm"
-              src="./assets/image/parceiros/nexus.jpg"
-              alt="Nexus"
-            />
-          </div>
-        </div>
-      </section>
 
-
-      <!-- PARCEIROS -->
-      <section id="parceiros">
-        <h2
-          class="text-4xl font-bold text-center text-gray-800 mb-19 uppercase tracking-widest"
-        >
-          Parceiros
-        </h2>
-        <div class="flex flex-col gap-5 mb-5">
-          <div class="flex justify-center">
-            <img
-              class="border-2 max-w-sm"
-              src="./assets/image/parceiros/prisma.jpg"
-              alt="Prisma"
-            />
-          </div>
-          <div class="flex justify-around">
-            <img
-              class="border-2 max-w-sm"
-              src="./assets/image/parceiros/orbyte.jpg"
-              alt="Orbyte"
-            />
-            <img
-              class="border-2 max-w-sm"
-              src="./assets/image/parceiros/nexus.jpg"
-              alt="Nexus"
-            />
-          </div>
-        </div>
-      </section>
+      
 
       <!-- NOSSOS PROJETOS -->
-      <section id="nossos-projetos" class="bg-(--laranjaClaro) p-3">
+      <section id="nossos-projetos" class="bg-(--laranjaClaro) p-5 scroll-mt-20">
         <h2
           class="text-4xl font-bold text-center text-gray-800 mb-19 uppercase tracking-widest"
         >
@@ -227,8 +169,38 @@
         </div>
       </section>
 
+      <!-- PARCEIROS -->
+      <section id="parceiros" class="scroll-mt-10 py-20">
+        <h2
+          class="text-4xl font-bold text-center text-gray-800 mb-19 uppercase tracking-widest"
+        >
+          Parceiros
+        </h2>
+        <div class="flex flex-col gap-5">
+          <div class="flex justify-center">
+            <img
+              class="border-2 max-w-sm"
+              src="./assets/image/parceiros/prisma.jpg"
+              alt="Prisma"
+            />
+          </div>
+          <div class="flex justify-around">
+            <img
+              class="border-2 max-w-sm"
+              src="./assets/image/parceiros/orbyte.jpg"
+              alt="Orbyte"
+            />
+            <img
+              class="border-2 max-w-sm"
+              src="./assets/image/parceiros/nexus.jpg"
+              alt="Nexus"
+            />
+          </div>
+        </div>
+      </section>
+
       <!-- FALE CONOSCO -->
-      <section id="fale-conosco">
+      <section id="fale-conosco" class=" scroll-mt-30 h-[calc(100vh-30px)]">
         <div class="flex justify-center">
           <div class="bg-(--maisRosa) m-3 text-white rounded-sm p-5 w-6/12">
             <div class="flex justify-center p-3">
