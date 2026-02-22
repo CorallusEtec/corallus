@@ -17,24 +17,7 @@
   --bege: #efebe5;
   --laranjaClaro: #f4f1ed;
 }
-#progCarrosel::-webkit-progress-value {
-  background-color: var(--rosado);
-  border-radius: 20px;
 
-}
-#progCarrosel::-webkit-progress-bar {
-  background-color: white;
-  border-radius: 20px;
-}
-
-#progCarrosel {
-  appearance: none;
-  border-radius: 20px;
-  background-color: white;
-}
-#progCarrosel::-moz-progress-bar{
-  background-color: var(--rosado);
-}
 .navbar {
   overflow: hidden;
   position: sticky;

@@ -55,11 +55,11 @@ const renderizarEquipe = (integrantes) => {
 // Classe que controla as operações do carrosel de nossos projetos
 class Carrosel {
   // Recebe as dependências e inicia o carrosel na view
-  constructor(carroselWrapper, lista, descProj, progCarrosel, indice) {
+  constructor(carroselWrapper, lista, descProj, indicadorWrapper, indice) {
     this.carroselWrapper = carroselWrapper;
     this.lista = lista;
     this.descProj = descProj;
-    this.progCarrosel = progCarrosel;
+    this.indicadorWrapper = indicadorWrapper;
     this.indice = indice;
     this.initCarrosel();
   }
@@ -68,8 +68,8 @@ class Carrosel {
   initCarrosel() {
     this.loadImages();
     this.renderDescProj();
-    this.attProgresso();
-    this.progCarrosel.max = this.lista.length-1;
+    this.criaIndicador();
+    this.attIndicador();
   }
 
   // Renderiza a aba com o nome e descrição do projeto
@@ -83,16 +83,45 @@ class Carrosel {
     <p class="text-center text-xl" id="descProj">${this.lista[this.indice].desc}</p>
     `;
   }
-  // Atualiza a Progress bar do carrosel
-  attProgresso() {
-    this.progCarrosel.value = this.indice;
+  // Cria as bolinhas para indicador
+  criaIndicador() {
+    this.indicadorWrapper.innerHTML = '';
+
+    for (let i=0; i<this.lista.length; i++) {
+      const indicador = document.createElement('button');
+
+      indicador.className = 'w-3 h-3 rounded-full bg-white transition-all duration-300 border border-[var(--laranja-claro)] cursor-pointer';
+      
+      indicador.addEventListener('click', () => {
+        this.indice=i;
+        this.renderDescProj();
+        this.attIndicador();
+        this.moveCarrosel(true);
+      });
+      this.indicadorWrapper.appendChild(indicador);
+    }
+    this.indicadorList = this.indicadorWrapper.querySelectorAll('button');
   }
+
+  //atualiza visualmente bolinha atual
+  attIndicador() {
+    this.indicadorList.forEach(indicador => {
+      indicador.classList.remove('bg-[var(--rosado)]','scale-125', 'border-0');
+      indicador.classList.add('bg-white');
+    });
+
+    const indicadorAtual = this.indicadorList[this.indice];
+    indicadorAtual.classList.remove('bg-white');
+    indicadorAtual.classList.add('bg-[var(--rosado)]', 'scale-125', 'border-0');
+  }
+
+
   // Realiza a operação de passar para a direita
   clickBtnProx() {
     this.indice++;
     if(this.indice > this.lista.length-1) { this.indice=0;}
     this.renderDescProj();
-    this.attProgresso();
+    this.attIndicador();
     this.moveCarrosel(true);
   }
   // Realiza a operação de passar para a esquerda
@@ -100,7 +129,7 @@ class Carrosel {
     this.indice--;
     if(this.indice < 0) { this.indice=this.lista.length-1;}
     this.renderDescProj();
-    this.attProgresso();
+    this.attIndicador();
     this.moveCarrosel(true);
   }
   // Movimenta de fato as imagens do carrosel
