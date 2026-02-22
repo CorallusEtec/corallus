@@ -123,6 +123,23 @@
           "iconClass": "bi bi-github"
         }
       ]
+    },
+    {
+      "nome": "Rafael Souto",
+      "foto": "./assets/image/membros/rafael.jpeg",
+      "funcao": "Desenvolvedor Front-End",
+      "contatos": [
+        {
+          "rede": "Email",
+          "url": "mailto:rafaelsoutodemoura09@gmail.com",
+          "iconClass": "bi bi-envelope-fill"
+        },
+        {
+          "rede": "Github",
+          "url": "https://github.com/rfael-SdM",
+          "iconClass": "bi bi-github"
+        }
+      ]
     }
   ],
   "projetos": [
