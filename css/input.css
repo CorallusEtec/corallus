@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
 /*
@@ -10,74 +10,16 @@
   */
 :root {
   /*font-family: "Coco Gothic"; */
-  font-family: "Nunito", sans-serif;
+  font-family: "Inter", sans-serif;
   --maisRosa: #f16b68;
   --rosado: #da5050;
   --rosadoHover: #f37575;
   --bege: #efebe5;
   --laranjaClaro: #f4f1ed;
 }
-#progCarrosel::-webkit-progress-value {
-  background-color: var(--rosado);
-  border-radius: 20px;
-
-}
-#progCarrosel::-webkit-progress-bar {
-  background-color: white;
-  border-radius: 20px;
-}
-
-#progCarrosel {
-  appearance: none;
-  border-radius: 20px;
-  background-color: white;
-}
-#progCarrosel::-moz-progress-bar{
-  background-color: var(--rosado);
-}
 .navbar {
   overflow: hidden;
   position: sticky;
   top: 0;
   width: 100%;
-}
-
-@keyframes escrever {
-  0% {
-    width: 0ch;
-  }
-  33% {
-    width: 33ch;
-  }
-  66% {
-    width: 33ch;
-  }
-  90% {
-    width: 0ch;
-  }
-  100% {
-    width: 0ch;
-  }
-}
-@keyframes blink {
-  50% {
-    border-color: gray;
-  }
-}
-
-.barra-pesquisa {
-  & p {
-    border-right: 5px solid;
-    white-space: nowrap;
-    overflow: hidden;
-    margin: 0;
-    animation:
-      escrever 10s infinite steps(38),
-      blink 0.5s infinite alternate step-end;
-  }
-}
-.slide {
-  width: 650px;
-  height: 330px;
-
 }

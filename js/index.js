@@ -25,12 +25,16 @@ const jsonConvertido = await converterJson('./js/info.json');
 
 /* Funções de renderização de componentes no HTML */
 
+/* USAR NO NOVO CARROSEL DE PROJETOS
 const carrosel = new Carrosel(carroselBox, jsonConvertido.projetos, descProj, progCarrosel, 0);
 btnProx.addEventListener('click', () =>carrosel.clickBtnProx());
 btnPrev.addEventListener('click', ()=>carrosel.clickBtnPrev());
+*/
 
+// USAR NO FORMULÁRIO DE FALE CONOSCO
+/*renderAssuntos(selectEl, jsonConvertido.assuntos);*/
 
-renderAssuntos(selectEl, jsonConvertido.assuntos);
-renderizarEquipe(jsonConvertido.integrantes);
+// USAR NOS CARDS DE EQUIPE
+/*renderizarEquipe(jsonConvertido.integrantes);*/
 
 
