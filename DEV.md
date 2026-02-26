@@ -9,11 +9,13 @@ Algumas normas e tratos para padronizar o desenvolvimento
 ### Frameworks e libs
 - TailwindCSS (Estilização)
 
-**Nota:** Usar o arquivo `./css/input.css` APENAS parar a necessidade de animações com `@keyframe` ou estilos específicos como `--moz`, `--webkit`, transições etc. Via de regra, usar as classes do Tailwind primáriamente
+**Nota:** Usar o arquivo `./css/input.css` APENAS parar a necessidade de animações com `@keyframe` ou estilos específicos como `--moz`, `--webkit`, transições etc. Via de regra, usar as classes do Tailwind primáriamente.
 - Bootstrap Icons (Ícones para o projeto)
 ## Padrões de código
 - Comentar quando possível para clareza do código
+- Antes de criar uma branch, use o `git pull origin main` para atualizar a sua `branch` main com a do repositório remoto
 ### Usar a seguinte notação para a cria a branch:
+- Crie a sua branch a partir da `main`: estando na `main`, use o comando `git checkout -b <nome-da-branch>`
 - **Não** comittar direto na `main`, crie uma branch específica para a sua tarefa
 - para correção de erros: `fix/<nome-da-branch>`
 - para incluir novidades: `feature/<nome-da-branch>`
