@@ -75,6 +75,46 @@
 
       <!-- FALE CONOSCO -->
       <section id="fale-conosco">
+        <!-- CONTAINER WRAPPER -->
+        <div class="flex justify-center p-3">
+          <!-- FORM -->
+          <form class="flex flex-col w-[75%] rounded-3xl border-2 border-stone-400 p-3" action="mail.php">
+            <div class="flex justify-center">
+              <h2 class="font-semibold text-2xl">Fale Conosco</h2>
+            </div>
+            <!-- INPUT NOME -->
+            <div class="grid grid-cols-6">
+              <div class="flex flex-col col-span-3 gap-1.5">
+                <label class="text-sm" for="">Nome Completo</label>
+                <div class="flex border p-1 items-center border-stone-300 rounded-lg">
+                  <i class="bi bi-person p-1"></i>
+                  <input class="outline-none w-full font-normal text-md placeholder:text-stone-400" placeholder="Nome Completo" type="text">
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-6 justify-around">
+              <div class="flex flex-col col-span-2 gap-1.5">
+                <label for="">E-mail</label>
+                <div class="flex border p-1 items-center border-stone-300 rounded-lg">
+                  <i class="bi bi-envelope p-1"></i>
+                  <input placeholder="E-mail" class="w-full outline-none text-md placeholder:text-stone-400" type="email">
+                </div>
+              </div>
+              <div class="flex flex-col gap-1.5 col-end-7 col-span-2">
+                <label for="">Assunto</label>
+                <select class="outline-none border rounded-lg p-2 border-stone-300" name="" id="assunto"></select>
+              </div>
+            </div>
+            <div class="flex flex-col mb-3">
+              <label for="">Mensagem</label>
+              <textarea class="outline-none border border-stone-300 p-1.5 rounded-lg max-h-37.5" maxlength="600" name="" placeholder="Escreva sua mensagem..." id=""></textarea>
+            </div>
+            <div class="grid grid-cols-6 gap-5">
+              <button class=" col-span-1 col-end-6 border text-stone-600 p-1 border-stone-600 rounded-md">Limpar</button>
+              <button class="col-span-1 col-end-7 border bg-stone-700 p-1 text-white border-stone-600 rounded-md">Enviar</button>
+            </div>
+          </form>
+        </div>
       </section>
     </main>
 

@@ -32,7 +32,7 @@ btnPrev.addEventListener('click', ()=>carrosel.clickBtnPrev());
 */
 
 // USAR NO FORMULÁRIO DE FALE CONOSCO
-/*renderAssuntos(selectEl, jsonConvertido.assuntos);*/
+renderAssuntos(selectEl, jsonConvertido.assuntos);
 
 // USAR NOS CARDS DE EQUIPE
 /*renderizarEquipe(jsonConvertido.integrantes);*/
