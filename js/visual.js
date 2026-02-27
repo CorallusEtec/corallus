@@ -82,27 +82,39 @@ class Carrosel {
   // Configurações iniciais do carrosel
   initCarrosel() {
     this.loadImages();
-    this.carroselWrapper.style.transform = `translateX(${this.indice*this.slideList[0].offsetWidth}px)`;
+    this.carroselWrapper.style.transform = `translateX(${this.indice*(this.slideList[2].offsetWidth-this.slideList[2].offsetWidth)}px)`;
   }
   clickBtnProx() {
-    this.indice++;
-    console.log(this.indice)
-    if(this.indice > this.lista.length-1) {this.indice = 0; }
-    this.moveCarrosel(true)
+    if(this.indice >= this.lista.length) {
+      this.indice--;
+      this.moveCarrosel(false)
+      this.indice = 1;
+      console.log(this.indice)
+    } else {
+      this.moveCarrosel(true)
+      this.indice++;
+      console.log(this.indice)
+    }
+    
   }
   clickBtnPrev() {
-    this.indice--;
-    console.log(this.indice)
-    if(this.indice < 0 ) {
-      this.indice = this.lista.length-1;
+    if(this.indice <= 1 ) {
+      this.indice++;
+      this.moveCarrosel(true);
+      this.indice = this.lista.length;
+      console.log(this.indice)
+    } else {
+      if(this.indice==3){this.indice=3;}
+      this.moveCarrosel(false)
+      this.indice--;
+      console.log(this.indice)
     }
-    this.moveCarrosel(false)
   }
   // Movimenta de fato as imagens do carrosel
   moveCarrosel(right) {
   if(right) {
-    this.carroselWrapper.style.transform = `translateX(-${this.indice*this.slideList[0].offsetWidth}px)`;
-    } else { this.carroselWrapper.style.transform = `translateX(${this.indice*this.slideList[0].offsetWidth}px)`;}
+    this.carroselWrapper.style.transform = `translateX(-${(this.indice*this.slideList[2].offsetWidth)-this.slideList[2].offsetWidth}px)`;
+    } else { this.carroselWrapper.style.transform = `translateX(${(this.indice*this.slideList[2].offsetWidth)-this.slideList[2].offsetWidth}px)`;}
   }
   // Função que carrega todas as imagens do json para a div do carrosel
   loadImages() {
