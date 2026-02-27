@@ -53,70 +53,73 @@ const renderizarEquipe = (integrantes) => {
 };
 
 // Classe que controla as operações do carrosel de nossos projetos
+function renderProjetos(container, projetos) {
+  for(let i=0; i<projetos.length; i++) {
+    const projeto = document.createElement('div');
+    projeto.innerHTML =`
+      <div class="flex flex-col border-stone-400 border">
+        <img src="${projetos[i].img}" class="bg-cover"  />
+        <div class="flex flex-col items-center p-1 py-3">
+          <h3 class="font-medium text-3xl">${projetos[i].nome}</h3>
+          <p class="text-center font-light">${projetos[i].desc}</p>
+        </div>
+      </div>`
+    container.appendChild(projeto);
+    projeto.classList.add('flex', 'max-w-1/4')
+  }
+}
+
 class Carrosel {
   // Recebe as dependências e inicia o carrosel na view
-  constructor(carroselWrapper, lista, descProj, progCarrosel, indice) {
+  constructor(carroselWrapper, lista, indice) {
     this.carroselWrapper = carroselWrapper;
     this.lista = lista;
-    this.descProj = descProj;
-    this.progCarrosel = progCarrosel;
     this.indice = indice;
     this.initCarrosel();
+    console.log(this.indice)
   }
   
   // Configurações iniciais do carrosel
   initCarrosel() {
     this.loadImages();
-    this.renderDescProj();
-    this.attProgresso();
-    this.progCarrosel.max = this.lista.length-1;
+    this.carroselWrapper.style.transform = `translateX(${this.indice*this.slideList[0].offsetWidth}px)`;
   }
-
-  // Renderiza a aba com o nome e descrição do projeto
-  renderDescProj() {
-  
-    this.descProj.innerHTML = `
-    <div class="flex justify-center gap-3 items-center p-2">
-      <h3 class="text-center text-3xl font-bold" id="tituloProj">${this.lista[this.indice].nome}</h3>
-    <div id="escopoProj"></div>
-    </div>
-    <p class="text-center text-xl" id="descProj">${this.lista[this.indice].desc}</p>
-    `;
-  }
-  // Atualiza a Progress bar do carrosel
-  attProgresso() {
-    this.progCarrosel.value = this.indice;
-  }
-  // Realiza a operação de passar para a direita
   clickBtnProx() {
     this.indice++;
-    if(this.indice > this.lista.length-1) { this.indice=0;}
-    this.renderDescProj();
-    this.attProgresso();
-    this.moveCarrosel(true);
+    console.log(this.indice)
+    if(this.indice > this.lista.length-1) {this.indice = 0; }
+    this.moveCarrosel(true)
   }
-  // Realiza a operação de passar para a esquerda
   clickBtnPrev() {
     this.indice--;
-    if(this.indice < 0) { this.indice=this.lista.length-1;}
-    this.renderDescProj();
-    this.attProgresso();
-    this.moveCarrosel(true);
+    console.log(this.indice)
+    if(this.indice < 0 ) {
+      this.indice = this.lista.length-1;
+    }
+    this.moveCarrosel(false)
   }
   // Movimenta de fato as imagens do carrosel
   moveCarrosel(right) {
-    if(right) {
-      this.carroselWrapper.style.transform = `translateX(-${this.indice*this.slideList[0].offsetWidth}px)`;
+  if(right) {
+    this.carroselWrapper.style.transform = `translateX(-${this.indice*this.slideList[0].offsetWidth}px)`;
     } else { this.carroselWrapper.style.transform = `translateX(${this.indice*this.slideList[0].offsetWidth}px)`;}
   }
   // Função que carrega todas as imagens do json para a div do carrosel
   loadImages() {
     for(let i=0; i<this.lista.length; i++) {
-      const img = document.createElement('img');
-      img.src = this.lista[i].img;
-      img.classList.add('slide');
-      img.alt = `Imagem do projeto ${this.lista[i].nome}`
-      this.carroselWrapper.appendChild(img);
+      const projeto = document.createElement('div');
+      projeto.innerHTML = `
+      <div class="flex flex-col border-stone-400 border">
+        <img src="${this.lista[i].img}" />
+        <div class="flex flex-col items-center p-1 py-3">
+          <h3 class="font-medium text-3xl">${this.lista[i].nome}</h3>
+          <p class="text-center font-light">${this.lista[i].desc}</p>
+        </div>
+      </div>
+      `
+      projeto.classList.add('slide');
+      projeto.alt = `Card do projeto ${this.lista[i].nome}`
+      this.carroselWrapper.appendChild(projeto);
     }
     this.slideList = document.querySelectorAll('.slide');
   }
