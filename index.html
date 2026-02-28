@@ -143,10 +143,10 @@
 
           <div class="flex justify-center">
             <!-- CARROSEL CORE -->
-            <div class="flex gap-9 items-center">
+            <div class="flex gap-9 items-center justify-center">
               <!-- SETAS  E WRAPPER -->
               <!-- ESQUERDA -->
-              <div class="button-prev">
+              <div class="button-prev flex items-end">
                 <button
                   id="btnPrev"
                   class="px-1.5 py-1 rounded-full bg-zinc-800"
@@ -156,10 +156,10 @@
               </div>
               <!-- WRAPPER -->
 
-              <div class="overflow-hidden">
+              <div  class="wrapper overflow-hidden w-[70%]">
                 <div
                   id="box"
-                  class="relative top-0 flex duration-500 transition ease-in-out"
+                  class="flex duration-500 items-start justify-center transition ease-in-out gap-10"
                 >
                   <!-- Slides -->
                 </div>
@@ -181,6 +181,11 @@
               If we need scrollbar 
               <div class="swiper-scrollbar"></div> -->
             </div>
+          </div>
+          <div class="flex justify-center gap-5">
+            <input type="radio" name="cardLevel" checked>
+            <input type="radio" name="cardLevel">
+            <input type="radio" name="cardLevel">
           </div>
         </div>
       </section>

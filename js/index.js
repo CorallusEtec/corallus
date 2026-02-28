@@ -7,6 +7,7 @@ copy.innerText = copy.innerText+" "+dataAtual.getFullYear();
 
 const carroselBox = document.querySelector('#box');
 const selectEl = document.querySelector("#assunto");
+const radioButtons = document.getElementsByName('cardLevel');
 
 if (copy) {
     copy.innerText = copy.innerText + " " + dataAtual.getFullYear();
@@ -30,7 +31,7 @@ const jsonConvertido = await converterJson('./js/info.json');
 /* Funções de renderização de componentes no HTML */
 
 /* USAR NO NOVO CARROSEL DE PROJETOS */
-const carrosel = new Carrosel(carroselBox, jsonConvertido.projetos, 1);
+const carrosel = new Carrosel(carroselBox, jsonConvertido.projetos, -1, radioButtons);
 
 btnProx.addEventListener('click', () =>carrosel.clickBtnProx());
 btnPrev.addEventListener('click', ()=>carrosel.clickBtnPrev());

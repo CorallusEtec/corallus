@@ -76,52 +76,61 @@ function renderProjetos(container, projetos) {
 
 class Carrosel {
   // Recebe as dependências e inicia o carrosel na view
-  constructor(carroselWrapper, lista, indice) {
+  constructor(carroselWrapper, lista, indice, radioList) {
     this.carroselWrapper = carroselWrapper;
+    this.radioList = radioList;
     this.lista = lista;
     this.indice = indice;
     this.initCarrosel();
-    console.log(this.indice)
   }
 
   // Configurações iniciais do carrosel
   initCarrosel() {
     this.loadImages();
     this.passoCarrosel = this.slideList[0].offsetWidth;
-    console.log(this.passoCarrosel +" PASSO")
-    this.carroselWrapper.style.transform = `translateX(0px)`;
-  }
-  clickBtnProx() {
-    this.indice++;
-    this.renderDescProj();
-    this.attProgresso();
-    this.progCarrosel.max = this.lista.length - 1;
-  }
+    this.move(-this.passoCarrosel*this.indice);
+    this.addBlur();
 
+    for(let i=0; i<this.radioList.length; i++) {
+      this.radioList[i].addEventListener('click', ()=> {
+        this.indice = i-1;
+        this.addBlur()
+        this.move(-this.passoCarrosel*this.indice);
+      });
+    }
+  }
   // Realiza a operação de passar para a direita
   clickBtnProx() {
     this.indice++;
-    if (this.indice > this.lista.length - 1) { this.indice = 0; }
-    this.moveCarrosel(true);
-    
+    if(this.indice > this.lista.length-2) {
+      this.indice = -1;
+      this.move(-this.indice*this.passoCarrosel);
+    } else {
+      this.move(-this.indice*this.passoCarrosel);
+    }
+    this.addBlur();
+    this.atualizaRadio();
   }
   clickBtnPrev() {
-
     this.indice--;
-    this.moveCarrosel(false);
+    if(this.indice < -1) {
+      this.indice = this.lista.length-2;
+      this.move(-this.indice*this.passoCarrosel);
+    } else {
+      this.move(-this.indice*this.passoCarrosel);
+    }
+    this.addBlur();
+    this.atualizaRadio();
   }
-  // Movimenta de fato as imagens do carrosel
-  moveCarrosel(right) {
-  if(right) {
-    this.carroselWrapper.style.transform = `translateX(-${this.indice*this.passoCarrosel}px)`;
-    } else { this.carroselWrapper.style.transform = `translateX(${this.indice*this.passoCarrosel}px)`;}
+  move(valor) {
+    this.carroselWrapper.style.transform = `translateX(${valor}px)`;
   }
   // Função que carrega todas as imagens do json para a div do carrosel
   loadImages() {
     for(let i=0; i<this.lista.length; i++) {
       const projeto = document.createElement('div');
       projeto.innerHTML = `
-      <div class="flex flex-col border-stone-400 border">
+      <div class="flex flex-col border-stone-400 border h-100 ease-in-out duration-500 transition-all">
         <img src="${this.lista[i].img}" />
         <div class="flex flex-col items-center p-1 py-3">
           <h3 class="font-medium text-3xl">${this.lista[i].nome}</h3>
@@ -129,17 +138,32 @@ class Carrosel {
         </div>
       </div>
       `
-      projeto.classList.add('slide');
+      projeto.classList.add('slide', 'max-w-1/4');
       projeto.alt = `Card do projeto ${this.lista[i].nome}`
       this.carroselWrapper.appendChild(projeto);
     }
     this.slideList = document.querySelectorAll('.slide');
   }
-  // Movimenta de fato as imagens do carrosel
-  moveCarrosel(right) {
-    if (right) {
-      this.carroselWrapper.style.transform = `translateX(-${this.indice * this.slideList[0].offsetWidth}px)`;
-    } else { this.carroselWrapper.style.transform = `translateX(${this.indice * this.slideList[0].offsetWidth}px)`; }
+  addBlur() {
+    const cards = this.slideList;
+    for(let i=0; i<cards.length; i++) {
+      cards[i].classList.remove('blur');
+    }
+    const atual = cards[this.indice+1];
+
+    //atual.classList.add()
+
+    for(let i=0; i<cards.length; i++) {
+      if(cards[i] != atual) {
+        cards[i].classList.add('blur');
+      }
+    }
+  }
+  atualizaRadio() {
+    for(let i=0; i<this.radioList.length; i++) {
+      this.radioList[i].checked = false;
+    }
+    this.radioList[this.indice+1].checked = true;
   }
 }
 
