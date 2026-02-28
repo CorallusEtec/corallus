@@ -23,3 +23,11 @@
   top: 0;
   width: 100%;
 }
+
+.blur {
+  filter: blur(2px);
+  padding: 15px;
+}
+.slide {
+  transition: ease-in-out 300ms
+}

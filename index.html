@@ -1,223 +1,340 @@
 <!doctype html>
 <html lang="pt-br">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="./assets/image/logo.png" type="image/png-icon" />
-  <script type="module" src="./js/index.js"></script>
-
-  <link rel="stylesheet" href="css/output.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
-  <title>Corallus</title>
-</head>
-
-<body>
-  <!-- HEADER -->
-  <header class="bg-zinc-800 navbar font-bold z-30">
-    <div class="grid grid-cols-6 items-center">
-      <a href="#" class="col-span-3 flex items-center">
-        <img src="./assets/image/logo-vet.png" alt="logo" class="max-h-20" />
-        <span class="text-3xl text-white font-semibold">Corallus</span>
-      </a>
-      <nav class="col-span-3 items-center">
-        <ul class="flex gap-8 text-white text-xl font-semibold text-center p-3">
-          <a href="#home">
-            <li>Home</li>
-          </a>
-          <a href="#quem-somos">
-            <li>Quem Somos</li>
-          </a>
-          <a href="#nossos-projetos">
-            <li>Nossos Projetos</li>
-          </a>
-
-          <a href="#parceiros">
-            <li>Parceiros</li>
-          </a>
-          <a href="#fale-conosco">
-            <li>Fale Conosco</li>
-          </a>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <!-- HOME -->
-    <section id="home" class="py-[267px]
-        bg-[linear-gradient(to_bottom,rgba(0,0,0,0.1)_0%,rgba(7,7,10,1)_85%),url('../assets/image/template/computer.jpg')] 
-        bg-cover bg-right flex flex-col space-y-20 items-center justify-center text-white">
-      <div>
-        <div>
-          <h1 class="text-5xl font-bold text-white [text-shadow:2px_2px_2px_rgba(0,0,0,1)]"> INOVAÇÃO | CORALLUS </h1>
-        </div>
-        <div class="flex flex-col items-center justify-center space-y-6">
-          <h1 class="text-3xl font-semibold text-white [text-shadow:1px_1px_1px_rgba(0,0,0,1)]"> Desenvolvimento </h1>
-
-          <div class="flex items-center justify-center gap-25 text-white text-2xl">
-
-            <div class="flex flex-col items-center"> <i class=" bi bi-phone text-5xl"></i>
-              <p>Mobile</p>
-            </div>
-            <div class="flex flex-col items-center"> <i class=" bi bi-globe text-5xl"></i>
-              <p>Web</p>
-            </div>
-            <div class="flex flex-col items-center"> <i class=" bi bi-display text-5xl"></i>
-              <p>Desktop</p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-    <img src="./assets/image/template/ondulacaoHome.png" alt="Ondulação Home" class="w-100% h-100%" />
-
-
-    <!-- QUEM SOMOS -->
-    <section id="quem-somos" class="bg-white py-16 px-4">
-      <div class="max-w-6xl mx-auto text-center">
-
-        <div class="flex flex-row items-center justify-center gap-4 mb-6 text-zinc-800">
-          <i class="bi bi-people text-5xl"></i>
-          <h2 class="text-5xl font-bold italic">Quem Somos</h2>
-        </div>
-
-        <div class="max-w-4xl mx-auto mb-16">
-          <p class="text-2xl text-gray-900 mb-6 font-medium px-4">
-            Somos a Corallus, uma empresa desenvolvedora de software, com o intuito de construir o sistema mais completo
-            para você
-          </p>
-          <p class="text-xl text-gray-500">
-            Conheça a nossa equipe que está dedicada a entregar o melhor software para você
-          </p>
-        </div>
-
-        <div id="cards-container"
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-6 justify-items-center">
-        </div>
-
-      </div>
-    </section>
-    <!-- PARCEIROS -->
-    <section id="parceiros"></section>
-
-    <!-- PARCEIROS -->
-    <section id="parceiros"></section>
-
-    <!-- NOSSOS PROJETOS -->
-    <section id="nossos-projetos" class=""></section>
-
-    <!-- FALE CONOSCO -->
-    <section id="fale-conosco">
-      <!-- CONTAINER WRAPPER -->
-      <div class="flex justify-center p-3 mb-10">
-        <!-- FORM -->
-        <form class="flex flex-col w-[60%] gap-5 rounded-3xl border-2 border-stone-400 p-5" action="mail.php"
-          method="post">
-          <div class="flex justify-center">
-            <h2 class="font-semibold text-3xl">Fale Conosco</h2>
-          </div>
-          <div class="grid grid-cols-6">
-            <!-- NOME -->
-            <div class="flex flex-col col-span-3 gap-1.5">
-              <label class="font-light" for="nome">Nome Completo</label>
-              <div
-                class="flex border ease-in-out duration-300 p-1 items-center border-stone-300 rounded-lg has-focus:border-sky-600">
-                <i class="bi bi-person p-1 text-lg"></i>
-                <input required
-                  class="outline-none w-full font-normal text-sm placeholder:text-stone-400 ease-in-out duration-300 focus:p-1 focus:text-md"
-                  placeholder="Nome Completo" type="text" name="nome" id="nome" />
-              </div>
-            </div>
-          </div>
-          <div class="grid grid-cols-12 justify-around">
-            <!-- EMAIL -->
-            <div class="flex flex-col-reverse col-span-6">
-              <div class="flex flex-row-reverse peer border p-1 items-center peer border-stone-300 rounded-lg ease-in-out duration-300
-                has-focus:border-sky-600 has-focus:not-has-placeholder-shown:has-invalid:border-red-600">
-                <input placeholder="E-mail"
-                  class="w-full peer outline-none text-sm focus:invalid:text-red-600 placeholder:text-stone-400 ease-in-out duration-300 focus:p-1 focus:text-md"
-                  type="email" name="email" required />
-                <i class="bi ease-in-out duration-200 bi-envelope text-lg p-1"></i>
-              </div>
-              <span
-                class="hidden peer-has-focus:peer-not-has-placeholder-shown:peer-has-invalid:block font-light text-red-600 text-xs">*
-                E-mail inválido</span>
-              <label class="font-light pl-2" for="email">E-mail</label>
-            </div>
-            <!-- ASSUNTO -->
-            <div class="flex flex-col justify-end gap-1.5 col-end-12 col-span-4">
-              <label class="font-light" for="assunto">Assunto</label>
-              <select
-                class="outline-none border ease-in-out duration-300 focus:border-sky-600 rounded-lg border-stone-300 text-sm p-3"
-                name="assunto" id="assunto">
-                <option class="text-sm font-medium" value="">
-                  Selecione
-                </option>
-              </select>
-            </div>
-          </div>
-          <!-- MENSAGEM -->
-          <div class="flex flex-col mb-3">
-            <label class="font-light" for="msg">Mensagem</label>
-            <textarea
-              class="focus:border-sky-600 outline-none text-sm border min-h-28 border-stone-300 p-1.5 rounded-lg max-h-37.5 ease-in-out duration-200"
-              maxlength="600" name="msg" placeholder="Escreva sua mensagem..." id="msg"></textarea>
-          </div>
-          <!-- BOTÕES -->
-          <div class="grid grid-cols-12 gap-5">
-            <button type="reset"
-              class="cursor-pointer col-span-3 col-start-7 border text-stone-600 p-1 border-stone-600 rounded-md font-light ease-in-out duration-200 hover:bg-stone-100">
-              Limpar
-            </button>
-            <button type="submit"
-              class="cursor-pointer col-span-3 border bg-stone-700 p-1 text-white border-stone-600 rounded-md font-light text-md ease-in-out duration-200 hover:bg-stone-600">
-              Enviar
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <section id="footer">
-    <div class="bg-zinc-800 w-full p-5 text-white">
-      <div class="flex justify-between">
-        <h2 class="text-xl">Precisa de suporte?</h2>
-        <h2 class="text-xl">Siga-nos</h2>
-      </div>
-
-      <div class="grid grid-cols-3">
-        <div class="col-span-1">
-          <div class="flex flex-col text-3xl gap-1">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-whatsapp"></i></a>
-            <a href=""><i class="bi bi-envelope-fill"></i></a>
-            <a href=""><i class="bi bi-telephone-fill"></i></a>
-          </div>
-        </div>
-        <div class="col-span-1 flex justify-center">
-          <img src="./assets/image/logo-vet.png" alt="Logo" class="max-h-28" />
-        </div>
-
-        <div class="col-span-1">
-          <div class="flex flex-col items-end text-3xl gap-1">
-            <a href=""><i class="bi bi-youtube"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex justify-between border-t-2 border-white mt-5">
-        <a href="" class="text-xs text-stone-300 font-medium">Políticas de privacidade</a>
-        <a href="" class="text-xs text-stone-300 font-medium" id="copy">Todos os direitos reservados - Corallus
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/image/logo.png"
+      type="image/png-icon"
+    />
+    <script type="module" src="./js/index.js"></script>
+    <link rel="stylesheet" href="css/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <title>Corallus</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="bg-zinc-800 navbar font-bold z-30">
+      <div class="grid grid-cols-6 items-center">
+        <a href="#" class="col-span-3 flex items-center">
+          <img src="./assets/image/logo-vet.png" alt="logo" class="max-h-20" />
+          <span class="text-3xl text-white font-semibold">Corallus</span>
         </a>
-      </div>
-    </div>
-  </section>
-</body>
+        <nav class="col-span-3 items-center">
+          <ul
+            class="flex gap-8 text-white text-xl font-semibold text-center p-3"
+          >
+            <a href="#home">
+              <li>Home</li>
+            </a>
+            <a href="#quem-somos">
+              <li>Quem Somos</li>
+            </a>
+            <a href="#nossos-projetos">
+              <li>Nossos Projetos</li>
+            </a>
 
+            <a href="#parceiros">
+              <li>Parceiros</li>
+            </a>
+            <a href="#fale-conosco">
+              <li>Fale Conosco</li>
+            </a>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HOME -->
+      <section
+        id="home"
+        class="py-[267px] bg-[linear-gradient(to_bottom,rgba(0,0,0,0.1)_0%,rgba(7,7,10,1)_85%),url('../assets/image/template/computer.jpg')] bg-cover bg-right flex flex-col space-y-20 items-center justify-center text-white"
+      >
+        <div>
+          <div>
+            <h1
+              class="text-5xl font-bold text-white [text-shadow:2px_2px_2px_rgba(0,0,0,1)]"
+            >
+              INOVAÇÃO | CORALLUS
+            </h1>
+          </div>
+          <div class="flex flex-col items-center justify-center space-y-6">
+            <h1
+              class="text-3xl font-semibold text-white [text-shadow:1px_1px_1px_rgba(0,0,0,1)]"
+            >
+              Desenvolvimento
+            </h1>
+
+            <div
+              class="flex items-center justify-center gap-25 text-white text-2xl"
+            >
+              <div class="flex flex-col items-center">
+                <i class="bi bi-phone text-5xl"></i>
+                <p>Mobile</p>
+              </div>
+              <div class="flex flex-col items-center">
+                <i class="bi bi-globe text-5xl"></i>
+                <p>Web</p>
+              </div>
+              <div class="flex flex-col items-center">
+                <i class="bi bi-display text-5xl"></i>
+                <p>Desktop</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <img
+        src="./assets/image/template/ondulacaoHome.png"
+        alt="Ondulação Home"
+        class="w-full h-full"
+      />
+
+      <!-- QUEM SOMOS -->
+      <section id="quem-somos" class="bg-white py-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+          <div
+            class="flex flex-row items-center justify-center gap-4 mb-6 text-zinc-800"
+          >
+            <i class="bi bi-people text-5xl"></i>
+            <h2 class="text-5xl font-semibold">Quem Somos</h2>
+          </div>
+
+          <div class="max-w-4xl mx-auto mb-16">
+            <p class="text-2xl text-gray-900 mb-6 font-normal px-4">
+              Somos a Corallus, uma empresa desenvolvedora de software, com o
+              intuito de construir o sistema mais completo para você
+            </p>
+            <p class="text-2xl font-light text-gray-800">
+              Conheça a nossa equipe que está dedicada a entregar o melhor
+              software para você
+            </p>
+          </div>
+
+          <div
+            id="cards-container"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-6 justify-items-center"
+          ></div>
+        </div>
+      </section>
+      <!-- PARCEIROS -->
+      <section id="parceiros"></section>
+
+      <!-- PARCEIROS -->
+      <section id="parceiros"></section>
+
+      <!-- NOSSOS PROJETOS -->
+      <section id="nossos-projetos">
+        <div class="flex flex-col gap-5">
+          <div class="flex flex-col items-center">
+            <div class="flex justify-center items-center gap-3">
+              <i class="bi bi-folder2 text-5xl text-stone-800"></i>
+              <h2 class="text-5xl text-zinc-800 font-semibold">Nossos Projetos</h2>
+            </div>
+            <p class="w-1/4 text-stone-800 text-xl text-center">
+              Veja alguns de nossos projetos trabalhados recentemente
+            </p>
+          </div>
+
+          <div class="flex justify-center">
+            <!-- CARROSEL CORE -->
+            <div class="flex gap-9 items-center justify-center">
+              <!-- SETAS  E WRAPPER -->
+              <!-- ESQUERDA -->
+              <div class="button-prev flex items-end">
+                <button
+                  id="btnPrev"
+                  class="px-1.5 py-1 rounded-full bg-zinc-800"
+                >
+                  <i class="text-4xl text-white bi bi-arrow-left-short"></i>
+                </button>
+              </div>
+              <!-- WRAPPER -->
+
+              <div  class="wrapper overflow-hidden w-[70%]">
+                <div
+                  id="box"
+                  class="flex duration-500 items-start justify-center transition ease-in-out gap-10"
+                >
+                  <!-- Slides -->
+                </div>
+              </div>
+
+              <!-- DIREITA -->
+              <div class="button-next">
+                <button
+                  id="btnProx"
+                  class="px-1.5 py-1 rounded-full bg-zinc-800"
+                >
+                  <i class="text-4xl text-white bi bi-arrow-right-short"></i>
+                </button>
+              </div>
+              <!--
+               If we need pagination 
+              <div class="swiper-pagination"></div>
+
+              If we need scrollbar 
+              <div class="swiper-scrollbar"></div> -->
+            </div>
+          </div>
+          <div class="flex justify-center gap-5">
+            <input type="radio" name="cardLevel" checked>
+            <input type="radio" name="cardLevel">
+            <input type="radio" name="cardLevel">
+          </div>
+        </div>
+      </section>
+
+      <!-- FALE CONOSCO -->
+      <section id="fale-conosco">
+        <!-- CONTAINER WRAPPER -->
+        <div class="flex justify-center p-3 mb-10">
+          <!-- FORM -->
+          <form
+            class="flex flex-col w-[60%] gap-5 rounded-3xl border-2 border-stone-400 p-5"
+            action="mail.php"
+            method="post"
+          >
+            <div class="flex justify-center">
+              <h2 class="font-semibold text-3xl">Fale Conosco</h2>
+            </div>
+            <div class="grid grid-cols-6">
+              <!-- NOME -->
+              <div class="flex flex-col col-span-3 gap-1.5">
+                <label class="font-light" for="nome">Nome Completo</label>
+                <div
+                  class="flex border ease-in-out duration-300 p-1 items-center border-stone-300 rounded-lg has-focus:border-sky-600"
+                >
+                  <i class="bi bi-person p-1 text-lg"></i>
+                  <input
+                    required
+                    class="outline-none w-full font-normal text-sm placeholder:text-stone-400 ease-in-out duration-300 focus:p-1 focus:text-md"
+                    placeholder="Nome Completo"
+                    type="text"
+                    name="nome"
+                    id="nome"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-12 justify-around">
+              <!-- EMAIL -->
+              <div class="flex flex-col-reverse col-span-6">
+                <div
+                  class="flex flex-row-reverse peer border p-1 items-center peer border-stone-300 rounded-lg ease-in-out duration-300 has-focus:border-sky-600 has-focus:not-has-placeholder-shown:has-invalid:border-red-600"
+                >
+                  <input
+                    placeholder="E-mail"
+                    class="w-full peer outline-none text-sm focus:invalid:text-red-600 placeholder:text-stone-400 ease-in-out duration-300 focus:p-1 focus:text-md"
+                    type="email"
+                    name="email"
+                    required
+                  />
+                  <i
+                    class="bi ease-in-out duration-200 bi-envelope text-lg p-1"
+                  ></i>
+                </div>
+                <span
+                  class="hidden peer-has-focus:peer-not-has-placeholder-shown:peer-has-invalid:block font-light text-red-600 text-xs"
+                  >* E-mail inválido</span
+                >
+                <label class="font-light pl-2" for="email">E-mail</label>
+              </div>
+              <!-- ASSUNTO -->
+              <div
+                class="flex flex-col justify-end gap-1.5 col-end-12 col-span-4"
+              >
+                <label class="font-light" for="assunto">Assunto</label>
+                <select
+                  class="outline-none border ease-in-out duration-300 focus:border-sky-600 rounded-lg border-stone-300 text-sm p-3"
+                  name="assunto"
+                  id="assunto"
+                >
+                  <option class="text-sm font-medium" value="">
+                    Selecione
+                  </option>
+                </select>
+              </div>
+            </div>
+            <!-- MENSAGEM -->
+            <div class="flex flex-col mb-3">
+              <label class="font-light" for="msg">Mensagem</label>
+              <textarea
+                class="focus:border-sky-600 outline-none text-sm border min-h-28 border-stone-300 p-1.5 rounded-lg max-h-37.5 ease-in-out duration-200"
+                maxlength="600"
+                name="msg"
+                placeholder="Escreva sua mensagem..."
+                id="msg"
+              ></textarea>
+            </div>
+            <!-- BOTÕES -->
+            <div class="grid grid-cols-12 gap-5">
+              <button
+                type="reset"
+                class="cursor-pointer col-span-3 col-start-7 border text-stone-600 p-1 border-stone-600 rounded-md font-light ease-in-out duration-200 hover:bg-stone-100"
+              >
+                Limpar
+              </button>
+              <button
+                type="submit"
+                class="cursor-pointer col-span-3 border bg-stone-700 p-1 text-white border-stone-600 rounded-md font-light text-md ease-in-out duration-200 hover:bg-stone-600"
+              >
+                Enviar
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <section id="footer">
+      <div class="bg-zinc-800 w-full p-5 text-white">
+        <div class="flex justify-between">
+          <h2 class="text-xl">Precisa de suporte?</h2>
+          <h2 class="text-xl">Siga-nos</h2>
+        </div>
+
+        <div class="grid grid-cols-3">
+          <div class="col-span-1">
+            <div class="flex flex-col text-3xl gap-1">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-whatsapp"></i></a>
+              <a href=""><i class="bi bi-envelope-fill"></i></a>
+              <a href=""><i class="bi bi-telephone-fill"></i></a>
+            </div>
+          </div>
+          <div class="col-span-1 flex justify-center">
+            <img
+              src="./assets/image/logo-vet.png"
+              alt="Logo"
+              class="max-h-28"
+            />
+          </div>
+
+          <div class="col-span-1">
+            <div class="flex flex-col items-end text-3xl gap-1">
+              <a href=""><i class="bi bi-youtube"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-between border-t-2 border-white mt-5">
+          <a href="" class="text-xs text-stone-300 font-medium"
+            >Políticas de privacidade</a
+          >
+          <a href="" class="text-xs text-stone-300 font-medium" id="copy"
+            >Todos os direitos reservados - Corallus
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
