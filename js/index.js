@@ -1,24 +1,30 @@
+
 import { renderAssuntos, renderizarEquipe, Carrosel } from './visual.js';
 const dataAtual = new Date();
 const copy = document.querySelector("#copy");
 copy.innerText = copy.innerText+" "+dataAtual.getFullYear();
 
-const progCarrosel = null;
+
 const carroselBox = document.querySelector('#box');
 const selectEl = document.querySelector("#assunto");
+
+if (copy) {
+    copy.innerText = copy.innerText + " " + dataAtual.getFullYear();
+}
+
+// 2. Seleção de elementos do Carrossel
 const btnProx = document.querySelector('#btnProx');
 const btnPrev = document.querySelector('#btnPrev');
 
 async function converterJson(arquivo) {
-    const data = await fetch(arquivo);
-    if(data.ok) {
-        const finalObj = await data.json();
-        return finalObj
+    const response = await fetch(arquivo);
+    if (response.ok) {
+        return await response.json();
     }
-    
+    return null;
 }
-/* jsonConvertido pega os dados do info.json e transforma em um objeto de fato,
- sendo possivel manipular no codigo*/
+
+
 const jsonConvertido = await converterJson('./js/info.json');
 
 /* Funções de renderização de componentes no HTML */
@@ -31,8 +37,10 @@ btnPrev.addEventListener('click', ()=>carrosel.clickBtnPrev());
 
 /* USAR NO FORMULÁRIO DE FALE CONOSCO */
 renderAssuntos(selectEl, jsonConvertido.assuntos);
-
-/* USAR NOS CARDS DE EQUIPE */
-/*renderizarEquipe(jsonConvertido.integrantes);*/
-
-
+if (jsonConvertido) {
+  
+    if (selectEl) {
+        renderAssuntos(selectEl, jsonConvertido.assuntos);
+    }
+    renderizarEquipe(jsonConvertido.integrantes);
+}

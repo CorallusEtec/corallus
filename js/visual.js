@@ -27,25 +27,30 @@ const renderizarEquipe = (integrantes) => {
         .join("");
 
       return `
-            <div class="group h-100 w-64 perspective-[1000px]">
-                <div class="relative h-full w-full rounded-xl shadow-xl transition-all duration-700 transform-3d group-hover:[transform:rotateY(180deg)]">
-                    
-                    <div class="absolute inset-0 h-full w-full [backface-visibility:hidden] hover:z-0">
-                        <img class="h-full w-full rounded-xl object-cover shadow-lg" src="${membro.foto}" alt="${membro.nome}" />
-                    </div>
+    <div class="group h-95 w-full max-w-65 perspective-[1000px] mx-auto">
+        <div class="relative h-full w-full rounded-2xl shadow-lg transition-all duration-500 transform-3d group-hover:[transform:rotateY(180deg)]">
+            
+            <div class="absolute inset-0 h-full w-full backface-hidden z-10">
+                <img class="h-full w-full rounded-2xl object-cover border border-gray-100 shadow-sm" 
+                    src="${membro.foto}" 
+                    alt="${membro.nome}" />
+            </div>
 
-                    <div class="absolute inset-0 h-full w-full rounded-xl bg-white border border-gray-200 px-6 text-center text-gray-900 [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col items-center justify-center z-10">
-                        <h5 class="text-xl font-bold mb-1">${membro.nome}</h5>
-                        <p class="text-[11px] text-gray-500 italic mb-6 leading-tight">${membro.funcao}</p>
-                        
-                        <div class="flex flex-wrap justify-center gap-4 hover:z-20">
-                            ${redesSociais}
-                        </div>
-                    </div>
+            <div class="absolute inset-0 h-full w-full rounded-2xl bg-white border border-gray-100 px-4 text-center backface-hidden transform-[rotateY(180deg)] flex flex-col items-center justify-center z-20">
+                <h5 class="text-xl font-bold text-zinc-800 mb-1">${membro.nome}</h5>
+                
+                <p class="text-sm text-[--rosado] font-light mb-4 leading-tight">${membro.funcao}</p>
+                
+                <div class="w-10 h-px bg-gray-200 mb-6"></div>
 
+                <div class="flex flex-wrap justify-center gap-4">
+                    ${redesSociais}
                 </div>
             </div>
-        `;
+
+        </div>
+    </div>
+  `;
     })
     .join("");
 
@@ -78,7 +83,7 @@ class Carrosel {
     this.initCarrosel();
     console.log(this.indice)
   }
-  
+
   // Configurações iniciais do carrosel
   initCarrosel() {
     this.loadImages();
@@ -88,6 +93,15 @@ class Carrosel {
   }
   clickBtnProx() {
     this.indice++;
+    this.renderDescProj();
+    this.attProgresso();
+    this.progCarrosel.max = this.lista.length - 1;
+  }
+
+  // Realiza a operação de passar para a direita
+  clickBtnProx() {
+    this.indice++;
+    if (this.indice > this.lista.length - 1) { this.indice = 0; }
     this.moveCarrosel(true);
     
   }
@@ -120,6 +134,12 @@ class Carrosel {
       this.carroselWrapper.appendChild(projeto);
     }
     this.slideList = document.querySelectorAll('.slide');
+  }
+  // Movimenta de fato as imagens do carrosel
+  moveCarrosel(right) {
+    if (right) {
+      this.carroselWrapper.style.transform = `translateX(-${this.indice * this.slideList[0].offsetWidth}px)`;
+    } else { this.carroselWrapper.style.transform = `translateX(${this.indice * this.slideList[0].offsetWidth}px)`; }
   }
 }
 
