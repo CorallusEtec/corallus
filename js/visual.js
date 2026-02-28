@@ -27,25 +27,30 @@ const renderizarEquipe = (integrantes) => {
         .join("");
 
       return `
-            <div class="group h-100 w-64 perspective-[1000px]">
-                <div class="relative h-full w-full rounded-xl shadow-xl transition-all duration-700 transform-3d group-hover:[transform:rotateY(180deg)]">
-                    
-                    <div class="absolute inset-0 h-full w-full [backface-visibility:hidden] hover:z-0">
-                        <img class="h-full w-full rounded-xl object-cover shadow-lg" src="${membro.foto}" alt="${membro.nome}" />
-                    </div>
+    <div class="group h-[380px] w-full max-w-[260px] perspective-[1000px] mx-auto">
+        <div class="relative h-full w-full rounded-2xl shadow-lg transition-all duration-500 transform-3d group-hover:[transform:rotateY(180deg)]">
+            
+            <div class="absolute inset-0 h-full w-full [backface-visibility:hidden] z-20">
+                <img class="h-full w-full rounded-2xl object-cover border border-gray-100 shadow-sm" 
+                    src="${membro.foto}" 
+                    alt="${membro.nome}" />
+            </div>
 
-                    <div class="absolute inset-0 h-full w-full rounded-xl bg-white border border-gray-200 px-6 text-center text-gray-900 [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col items-center justify-center z-10">
-                        <h5 class="text-xl font-bold mb-1">${membro.nome}</h5>
-                        <p class="text-[11px] text-gray-500 italic mb-6 leading-tight">${membro.funcao}</p>
-                        
-                        <div class="flex flex-wrap justify-center gap-4 hover:z-20">
-                            ${redesSociais}
-                        </div>
-                    </div>
+            <div class="absolute inset-0 h-full w-full rounded-2xl bg-white border border-gray-100 px-4 text-center [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col items-center justify-center z-10">
+                <h5 class="text-xl font-bold text-zinc-800 mb-1">${membro.nome}</h5>
+                
+                <p class="text-sm text-[--rosado] font-semibold italic mb-4 leading-tight">${membro.funcao}</p>
+                
+                <div class="w-10 h-[1px] bg-gray-200 mb-6"></div>
 
+                <div class="flex flex-wrap justify-center gap-4">
+                    ${redesSociais}
                 </div>
             </div>
-        `;
+
+        </div>
+    </div>
+  `;
     })
     .join("");
 
@@ -63,18 +68,18 @@ class Carrosel {
     this.indice = indice;
     this.initCarrosel();
   }
-  
+
   // Configurações iniciais do carrosel
   initCarrosel() {
     this.loadImages();
     this.renderDescProj();
     this.attProgresso();
-    this.progCarrosel.max = this.lista.length-1;
+    this.progCarrosel.max = this.lista.length - 1;
   }
 
   // Renderiza a aba com o nome e descrição do projeto
   renderDescProj() {
-  
+
     this.descProj.innerHTML = `
     <div class="flex justify-center gap-3 items-center p-2">
       <h3 class="text-center text-3xl font-bold" id="tituloProj">${this.lista[this.indice].nome}</h3>
@@ -90,7 +95,7 @@ class Carrosel {
   // Realiza a operação de passar para a direita
   clickBtnProx() {
     this.indice++;
-    if(this.indice > this.lista.length-1) { this.indice=0;}
+    if (this.indice > this.lista.length - 1) { this.indice = 0; }
     this.renderDescProj();
     this.attProgresso();
     this.moveCarrosel(true);
@@ -98,20 +103,20 @@ class Carrosel {
   // Realiza a operação de passar para a esquerda
   clickBtnPrev() {
     this.indice--;
-    if(this.indice < 0) { this.indice=this.lista.length-1;}
+    if (this.indice < 0) { this.indice = this.lista.length - 1; }
     this.renderDescProj();
     this.attProgresso();
     this.moveCarrosel(true);
   }
   // Movimenta de fato as imagens do carrosel
   moveCarrosel(right) {
-    if(right) {
-      this.carroselWrapper.style.transform = `translateX(-${this.indice*this.slideList[0].offsetWidth}px)`;
-    } else { this.carroselWrapper.style.transform = `translateX(${this.indice*this.slideList[0].offsetWidth}px)`;}
+    if (right) {
+      this.carroselWrapper.style.transform = `translateX(-${this.indice * this.slideList[0].offsetWidth}px)`;
+    } else { this.carroselWrapper.style.transform = `translateX(${this.indice * this.slideList[0].offsetWidth}px)`; }
   }
   // Função que carrega todas as imagens do json para a div do carrosel
   loadImages() {
-    for(let i=0; i<this.lista.length; i++) {
+    for (let i = 0; i < this.lista.length; i++) {
       const img = document.createElement('img');
       img.src = this.lista[i].img;
       img.classList.add('slide');
