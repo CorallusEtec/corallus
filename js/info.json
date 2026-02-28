@@ -8,7 +8,7 @@
     {
       "nome": "André dos Santos",
       "foto": "./assets/image/membros/andre.jpeg",
-      "funcao": "Gerente de projetos e Back-End",
+      "funcao": "Gerente de projetos e Analista de sistemas",
       "contatos": [
         {
           "rede": "Email",
@@ -30,7 +30,7 @@
     {
       "nome": "Samuel Isidro",
       "foto": "./assets/image/membros/samuel.jpeg",
-      "funcao": "Full-Stack",
+      "funcao": "Desenvolvedor Full-Stack",
       "contatos": [
         {
           "rede": "Email",
@@ -52,7 +52,7 @@
     {
       "nome": "Gustavo Matos",
       "foto": "./assets/image/membros/gustavo.jpeg",
-      "funcao": "Tester e Back-end",
+      "funcao": "Designer e Dev. Front-End",
       "contatos": [
         {
           "rede": "Email",
@@ -64,7 +64,7 @@
     {
       "nome": "Isabelly Alves",
       "foto": "./assets/image/membros/isabelly.jpeg",
-      "funcao": "Analista de Projeto e Designer",
+      "funcao": "Designer",
       "contatos": [
         {
           "rede": "Email",
@@ -76,7 +76,7 @@
     {
       "nome": "Lucas Luciano",
       "foto": "./assets/image/membros/lucasLuciano.jpeg",
-      "funcao": "DBA",
+      "funcao": "Tester e DBA",
       "contatos": [
         {
           "rede": "Email",
@@ -88,7 +88,7 @@
     {
       "nome": "Lucas Pereira",
       "foto": "./assets/image/membros/lucasPereira.jpeg",
-      "funcao": "DBA",
+      "funcao": "DBA e Desenvolvedor Front-End",
       "contatos": [
         {
           "rede": "Email",
@@ -127,7 +127,7 @@
     {
       "nome": "Rafael Souto",
       "foto": "./assets/image/membros/rafael.jpeg",
-      "funcao": "Desenvolvedor Front-End",
+      "funcao": "Desenvolvedor Back-End",
       "contatos": [
         {
           "rede": "Email",
