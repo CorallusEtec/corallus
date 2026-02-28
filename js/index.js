@@ -24,7 +24,7 @@ const jsonConvertido = await converterJson('./js/info.json');
 /* Funções de renderização de componentes no HTML */
 
 /* USAR NO NOVO CARROSEL DE PROJETOS */
-const carrosel = new Carrosel(carroselBox, jsonConvertido.projetos, 2);
+const carrosel = new Carrosel(carroselBox, jsonConvertido.projetos, 1);
 
 btnProx.addEventListener('click', () =>carrosel.clickBtnProx());
 btnPrev.addEventListener('click', ()=>carrosel.clickBtnPrev());
