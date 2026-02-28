@@ -1,4 +1,4 @@
-import { renderAssuntos, renderizarEquipe, Carrosel } from './visual.js';
+import { renderAssuntos, iScrollParceiros, renderizarEquipe, Carrosel } from './visual.js';
 const copy = document.querySelector("#copy");
 const selectEl = document.querySelector("#assunto");
 const dataAtual = new Date();
@@ -37,4 +37,5 @@ renderAssuntos(selectEl, jsonConvertido.assuntos);
 // USAR NOS CARDS DE EQUIPE
 /*renderizarEquipe(jsonConvertido.integrantes);*/
 
-
+const scrollParceiros = document.getElementById('carroselParceiros');
+iScrollParceiros(scrollParceiros, 1);

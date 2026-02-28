@@ -122,4 +122,25 @@ class Carrosel {
   }
 }
 
-export { renderAssuntos, renderizarEquipe, Carrosel };
+const iScrollParceiros = (scroll, velocidade = 1) => {
+  const items = Array.from(scroll.children);
+
+  items.forEach(item => {
+    scroll.appendChild(item.cloneNode(true));
+  });
+  let position = 0;
+  const speed = velocidade;
+  const animate = () => {
+    position -= speed;
+
+    if (position <= -scroll.scrollWidth / 2) {
+      position = 0;
+    }
+    scroll.style.transform = `translateX(${position}px)`;
+    requestAnimationFrame(animate);
+  };
+
+  animate();
+};
+
+export { renderAssuntos, renderizarEquipe, Carrosel, iScrollParceiros };
