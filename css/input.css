@@ -28,3 +28,10 @@
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
 }
+.blur {
+  filter: blur(2px);
+  padding: 15px;
+}
+.slide {
+  transition: ease-in-out 300ms
+}

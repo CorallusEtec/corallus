@@ -9,7 +9,6 @@
       type="image/png-icon"
     />
     <script type="module" src="./js/index.js"></script>
-
     <link rel="stylesheet" href="css/output.css" />
     <link
       rel="stylesheet"
@@ -54,32 +53,74 @@
       <!-- HOME -->
       <section
         id="home"
-        class="py-[267px]
-        bg-[linear-gradient(to_bottom,rgba(0,0,0,0.1)_0%,rgba(7,7,10,1)_85%),url('../assets/image/template/computer.jpg')] 
-        bg-cover bg-right flex flex-col space-y-20 items-center justify-center text-white"
+        class="py-[267px] bg-[linear-gradient(to_bottom,rgba(0,0,0,0.1)_0%,rgba(7,7,10,1)_85%),url('../assets/image/template/computer.jpg')] bg-cover bg-right flex flex-col space-y-20 items-center justify-center text-white"
       >
         <div>
-        <div>
-          <h1 class="text-5xl font-bold text-white [text-shadow:2px_2px_2px_rgba(0,0,0,1)]"> INOVAÇÃO | CORALLUS </h1>
-        </div>
-        <div class="flex flex-col items-center justify-center space-y-6" >
-          <h1 class="text-3xl font-semibold text-white [text-shadow:1px_1px_1px_rgba(0,0,0,1)]"> Desenvolvimento </h1>
-
-          <div class="flex items-center justify-center gap-25 text-white text-2xl">
-
-          <div class="flex flex-col items-center"> <i class=" bi bi-phone text-5xl"></i> <p>Mobile</p> </div>
-          <div class="flex flex-col items-center"> <i class=" bi bi-globe text-5xl"></i> <p>Web</p> </div>
-          <div class="flex flex-col items-center"> <i class=" bi bi-display text-5xl"></i> <p>Desktop</p> </div>
-
+          <div>
+            <h1
+              class="text-5xl font-bold text-white [text-shadow:2px_2px_2px_rgba(0,0,0,1)]"
+            >
+              INOVAÇÃO | CORALLUS
+            </h1>
           </div>
-        </div> 
+          <div class="flex flex-col items-center justify-center space-y-6">
+            <h1
+              class="text-3xl font-semibold text-white [text-shadow:1px_1px_1px_rgba(0,0,0,1)]"
+            >
+              Desenvolvimento
+            </h1>
+
+            <div
+              class="flex items-center justify-center gap-25 text-white text-2xl"
+            >
+              <div class="flex flex-col items-center">
+                <i class="bi bi-phone text-5xl"></i>
+                <p>Mobile</p>
+              </div>
+              <div class="flex flex-col items-center">
+                <i class="bi bi-globe text-5xl"></i>
+                <p>Web</p>
+              </div>
+              <div class="flex flex-col items-center">
+                <i class="bi bi-display text-5xl"></i>
+                <p>Desktop</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-       <img src="./assets/image/template/ondulacaoHome.png" alt="Ondulação Home" class="w-100% h-100%" />
-      
+      <img
+        src="./assets/image/template/ondulacaoHome.png"
+        alt="Ondulação Home"
+        class="w-full h-full"
+      />
 
       <!-- QUEM SOMOS -->
-      <section id="quem-somos" class="bg-white">
+      <section id="quem-somos" class="bg-white py-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+          <div
+            class="flex flex-row items-center justify-center gap-4 mb-6 text-zinc-800"
+          >
+            <i class="bi bi-people text-5xl"></i>
+            <h2 class="text-5xl font-semibold">Quem Somos</h2>
+          </div>
+
+          <div class="max-w-4xl mx-auto mb-16">
+            <p class="text-2xl text-gray-900 mb-6 font-normal px-4">
+              Somos a Corallus, uma empresa desenvolvedora de software, com o
+              intuito de construir o sistema mais completo para você
+            </p>
+            <p class="text-2xl font-light text-gray-800">
+              Conheça a nossa equipe que está dedicada a entregar o melhor
+              software para você
+            </p>
+          </div>
+
+          <div
+            id="cards-container"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-6 justify-items-center"
+          ></div>
+        </div>
       </section>
 
       <!-- PARCEIROS -->
@@ -103,7 +144,66 @@
       </section>
 
       <!-- NOSSOS PROJETOS -->
-      <section id="nossos-projetos" class=""></section>
+      <section id="nossos-projetos">
+        <div class="flex flex-col gap-5">
+          <div class="flex flex-col items-center">
+            <div class="flex justify-center items-center gap-3">
+              <i class="bi bi-folder2 text-5xl text-stone-800"></i>
+              <h2 class="text-5xl text-zinc-800 font-semibold">Nossos Projetos</h2>
+            </div>
+            <p class="w-1/4 text-stone-800 text-xl text-center">
+              Veja alguns de nossos projetos trabalhados recentemente
+            </p>
+          </div>
+
+          <div class="flex justify-center">
+            <!-- CARROSEL CORE -->
+            <div class="flex gap-9 items-center justify-center">
+              <!-- SETAS  E WRAPPER -->
+              <!-- ESQUERDA -->
+              <div class="button-prev flex items-end">
+                <button
+                  id="btnPrev"
+                  class="px-1.5 py-1 rounded-full bg-zinc-800"
+                >
+                  <i class="text-4xl text-white bi bi-arrow-left-short"></i>
+                </button>
+              </div>
+              <!-- WRAPPER -->
+
+              <div  class="wrapper overflow-hidden w-[70%]">
+                <div
+                  id="box"
+                  class="flex duration-500 items-start justify-center transition ease-in-out gap-10"
+                >
+                  <!-- Slides -->
+                </div>
+              </div>
+
+              <!-- DIREITA -->
+              <div class="button-next">
+                <button
+                  id="btnProx"
+                  class="px-1.5 py-1 rounded-full bg-zinc-800"
+                >
+                  <i class="text-4xl text-white bi bi-arrow-right-short"></i>
+                </button>
+              </div>
+              <!--
+               If we need pagination 
+              <div class="swiper-pagination"></div>
+
+              If we need scrollbar 
+              <div class="swiper-scrollbar"></div> -->
+            </div>
+          </div>
+          <div class="flex justify-center gap-5">
+            <input type="radio" name="cardLevel" checked>
+            <input type="radio" name="cardLevel">
+            <input type="radio" name="cardLevel">
+          </div>
+        </div>
+      </section>
 
       <!-- FALE CONOSCO -->
       <section id="fale-conosco">
@@ -141,8 +241,7 @@
               <!-- EMAIL -->
               <div class="flex flex-col-reverse col-span-6">
                 <div
-                  class="flex flex-row-reverse peer border p-1 items-center peer border-stone-300 rounded-lg ease-in-out duration-300
-                has-focus:border-sky-600 has-focus:not-has-placeholder-shown:has-invalid:border-red-600"
+                  class="flex flex-row-reverse peer border p-1 items-center peer border-stone-300 rounded-lg ease-in-out duration-300 has-focus:border-sky-600 has-focus:not-has-placeholder-shown:has-invalid:border-red-600"
                 >
                   <input
                     placeholder="E-mail"
