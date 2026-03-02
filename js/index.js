@@ -1,5 +1,5 @@
 
-import { renderAssuntos, renderizarEquipe, Carrosel } from './visual.js';
+import { renderAssuntos, iScrollParceiros, renderizarEquipe, Carrosel } from './visual.js';
 const dataAtual = new Date();
 const copy = document.querySelector("#copy");
 copy.innerText = copy.innerText+" "+dataAtual.getFullYear();
@@ -45,3 +45,6 @@ if (jsonConvertido) {
     }
     renderizarEquipe(jsonConvertido.integrantes);
 }
+
+const scrollParceiros = document.getElementById('carroselParceiros');
+iScrollParceiros(scrollParceiros, 1);
