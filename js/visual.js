@@ -76,9 +76,9 @@ function renderProjetos(container, projetos) {
 
 class Carrosel {
   // Recebe as dependências e inicia o carrosel na view
-  constructor(carroselWrapper, lista, indice, radioList) {
+  constructor(carroselWrapper, lista, indice, radioWrapper) {
     this.carroselWrapper = carroselWrapper;
-    this.radioList = radioList;
+    this.radioWrapper = radioWrapper;
     this.lista = lista;
     this.indice = indice;
     this.initCarrosel();
@@ -90,6 +90,7 @@ class Carrosel {
     this.passoCarrosel = this.slideList[0].offsetWidth;
     this.move(-this.passoCarrosel*this.indice);
     this.addBlur();
+    this.loadRadios();
 
     for(let i=0; i<this.radioList.length; i++) {
       this.radioList[i].addEventListener('click', ()=> {
@@ -164,6 +165,19 @@ class Carrosel {
       this.radioList[i].checked = false;
     }
     this.radioList[this.indice+1].checked = true;
+  }
+
+  loadRadios() {
+    for(let i=0; i<this.lista.length; i++) {
+      const radio = document.createElement('input');
+      radio.type = "radio";
+      radio.name = "cardLevel";
+      if(this.indice+1==i) {
+        radio.checked = true;
+      }
+      this.radioWrapper.appendChild(radio);
+    }
+    this.radioList = document.getElementsByName('cardLevel');
   }
 }
 

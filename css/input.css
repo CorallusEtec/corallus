@@ -16,6 +16,7 @@
   --rosadoHover: #f37575;
   --bege: #efebe5;
   --laranjaClaro: #f4f1ed;
+  scroll-behavior: smooth;
 }
 .navbar {
   overflow: hidden;
