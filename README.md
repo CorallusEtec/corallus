@@ -2,6 +2,6 @@
 
 Esse site refere-se à um dos artefatos para o Trabalho de Conclusão de Curso em Desenvolvimento de Sistemas na Escola Técnica Estadual de Guaianazes.
 
-## Documentação
+## Guia para desenvolvedores
 
-**Nota para o desenvolvimento**: <a href="./DEV.md">NOTA</a>
+Guia de apoio para desenvolvedores do projeto: [Guia](https://github.com/CorallusEtec/.github/blob/main/profile/DEV.md)
