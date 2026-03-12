@@ -347,3 +347,17 @@
     </section>
   </body>
 </html>
+<dialog id="statusEmail" class="ease-in-out transition-normal duration-1000 outline-none bg-transparent hidden flex justify-center pt-10 items-start backdrop-opacity-45 w-full h-full">
+
+</dialog>
+<script type="module" defer>
+import {abrirAlert} from './js/visual.js?v=1';
+const urlParams = new URLSearchParams(window.location.search);
+if(urlParams.get('empty')=='true') {
+  abrirAlert("Existem campos inválidos");
+} else if(urlParams.get('erro')=='true') {
+  abrirAlert("Não foi possivel enviar o email!")
+} else if(urlParams.get('sucess')=='true') {
+  abrirAlert("E-mail enviado com sucesso!")
+}
+</script>

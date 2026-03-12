@@ -1,3 +1,5 @@
+const statusEmail = document.getElementById('statusEmail');
+
 function renderAssuntos(el, lista) {
   for (let i = 0; i < lista.length; i++) {
     const opt = document.createElement("option");
@@ -58,22 +60,6 @@ const renderizarEquipe = (integrantes) => {
 };
 
 // Classe que controla as operações do carrosel de nossos projetos
-function renderProjetos(container, projetos) {
-  for(let i=0; i<projetos.length; i++) {
-    const projeto = document.createElement('div');
-    projeto.innerHTML =`
-      <div class="flex flex-col border-stone-400 border">
-        <img src="${projetos[i].img}" class="bg-cover"  />
-        <div class="flex flex-col items-center p-1 py-3">
-          <h3 class="font-medium text-3xl">${projetos[i].nome}</h3>
-          <p class="text-center font-light">${projetos[i].desc}</p>
-        </div>
-      </div>`
-    container.appendChild(projeto);
-    projeto.classList.add('flex', 'max-w-1/4')
-  }
-}
-
 class Carrosel {
   // Recebe as dependências e inicia o carrosel na view
   constructor(carroselWrapper, lista, indice, radioWrapper) {
@@ -202,4 +188,29 @@ const iScrollParceiros = (scroll, velocidade = 1) => {
   animate();
 };
 
-export { renderAssuntos, renderizarEquipe, Carrosel, iScrollParceiros };
+function abrirAlert(msg, cores) {
+  statusEmail.innerHTML = `
+    <div class="flex bg-stone-100 w-[50%] justify-between border-2 border-sky-800 rounded-lg p-3">
+      <span id="msgAlert">Email Enviado com sucesso!</span>
+      <button id="fecharStatusEmail" class="outline-none cursor-pointer"><i class="text-stone-700 bi bi-x-lg"></i></button>
+    </div>
+  `
+  const fecharStatusEmail = document.getElementById('fecharStatusEmail')
+  const msgAlert = document.getElementById('msgAlert');
+
+  msgAlert.innerText = msg;
+
+  statusEmail.showModal();
+  statusEmail.classList.toggle('hidden')
+  fecharStatusEmail.addEventListener('click', ()=>{
+    statusEmail.close();
+    statusEmail.classList.toggle('hidden')
+  });
+  setTimeout(()=>{
+    statusEmail.close();
+    statusEmail.classList.toggle('hidden')
+  }, 3000)
+}
+
+
+export { renderAssuntos, renderizarEquipe, Carrosel, iScrollParceiros, abrirAlert };
