@@ -1,8 +1,8 @@
 {
   "assuntos": [
     { "id": 1, "nome": "Parceria" },
-    { "id": 2, "nome": "Críticas e Sugestões" },
-    { "id": 3, "nome": "Dúvidas" }
+    { "id": 2, "nome": "Criticas e Sugestoes" },
+    { "id": 3, "nome": "Duvidas" }
   ],
   "integrantes": [
     {

@@ -4,7 +4,6 @@ const dataAtual = new Date();
 const copy = document.querySelector("#copy");
 copy.innerText = copy.innerText+" "+dataAtual.getFullYear();
 
-
 const carroselBox = document.querySelector('#box');
 const selectEl = document.querySelector("#assunto");
 const radioWrapper = document.getElementById('radioWrapper');
