@@ -11,7 +11,7 @@
 
 
 if($_SERVER['REQUEST_METHOD'] != 'POST') {
-    header("Location: index.html");
+    header("Location: index.html#fale-conosco");
 }
 validarCampos($_POST);
 
@@ -39,7 +39,7 @@ try {
     // Conteúdo
     $mail->isHTML(true);
     $mail->Subject = mb_convert_encoding($assuntos[$_POST['assunto']]->nome, 'UTF-8');
-    $mail->Body    = "<div style='border: 3px solid black; border-radius: 7px padding: 3px;'>".
+    $mail->Body    = "<div style='border-radius: 7px; padding: 3px;'>".
     "<h1>Fale Conosco</h1>".
     "<p><strong>Remetente:</strong>".mb_convert_encoding($_POST['email'], 'UTF-8')."</p>".
     "<p><strong>Assunto:</strong>".mb_convert_encoding($assuntos[$_POST['assunto']]->nome, 'UTF-8')."</p>".
@@ -48,9 +48,9 @@ try {
     $mail->AltBody = mb_convert_encoding($_POST['msg'], 'UTF-8');
 
     if($mail->send()) {
-        header("Location: index.html?sucess=true");
+        header("Location: index.html?sucess=true#fale-conosco");
     } else {
-        header("Location: index.html?erro=true");
+        header("Location: index.html?erro=true#fale-conosco");
     }
 
     } catch (Exception $e) {
